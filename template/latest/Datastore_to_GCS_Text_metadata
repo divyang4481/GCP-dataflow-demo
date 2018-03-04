@@ -1,0 +1,57 @@
+{
+  "name": "Datastore to Text File", 
+  "parameters": [
+    {
+      "helpText": "GQL Query which specifies what entities to grab. e.g: \"SELECT * FROM MyKind\"", 
+      "name": "datastoreReadGqlQuery", 
+      "label": "GQL Query", 
+      "regexes": [
+        "^.+$"
+      ]
+    }, 
+    {
+      "helpText": "The GCP Project Id of the Cloud Datastore instance that you want to read data from", 
+      "name": "datastoreReadProjectId", 
+      "label": "Read data from Datastore Project Id of", 
+      "regexes": [
+        "^[a-z][a-z0-9\\-]{5,29}$"
+      ]
+    }, 
+    {
+      "helpText": "[Optional] Namespace of requested Entities. Set as \"\" for default namespace", 
+      "name": "datastoreReadNamespace", 
+      "isOptional": true, 
+      "label": "Read data from Datastore Namespace of", 
+      "regexes": [
+        "[0-9A-Za-z._-]{0,100}"
+      ]
+    }, 
+    {
+      "helpText": "[Optional] A GCS path which contains all your Javascript code. e.g: \"gs://mybucket/mytransforms/*.js\". If you don't want to use a UDF leave this field blank.", 
+      "name": "javascriptTextTransformGcsPath", 
+      "isOptional": true, 
+      "label": "Javascript UDF GCS path", 
+      "regexes": [
+        "^gs:\\/\\/[^\\n\\r]+$"
+      ]
+    }, 
+    {
+      "helpText": "[Optional] Name of the Function to be called. If you have the javascript code of: \"function myTransform(inJson) { ...dostuff...}\" then your function name is \"myTransform\". If you don't want to use a UDF leave this field blank.", 
+      "name": "javascriptTextTransformFunctionName", 
+      "isOptional": true, 
+      "label": "Javascript UDF function name", 
+      "regexes": [
+        "^.+$"
+      ]
+    }, 
+    {
+      "helpText": "GCS Path Prefix as to where data should be written. e.g: \"gs://mybucket/somefolder/\"", 
+      "name": "textWritePrefix", 
+      "label": "GCS path of where to write data", 
+      "regexes": [
+        "^gs:\\/\\/[^\\n\\r]+$"
+      ]
+    }
+  ], 
+  "description": "A pipeline which reads in Datastore Entities and writes them to Google Cloud Storage as text files."
+}

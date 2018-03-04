@@ -1,0 +1,22 @@
+{
+  "name": "GCS Text File to Cloud Pub/Sub", 
+  "parameters": [
+    {
+      "helpText": "Path of the file pattern glob to read from. ex: gs://bucket-name/path/*.csv", 
+      "name": "inputFilePattern", 
+      "label": "Input Cloud Storage File(s)", 
+      "regexes": [
+        "^gs:\\/\\/[^\\n\\r]+$"
+      ]
+    }, 
+    {
+      "helpText": "The name of the topic which data should be published to. The name should be in the format of projects/<project-id>/topics/<topic-name>.", 
+      "name": "outputTopic", 
+      "label": "Output Pub/Sub Topic", 
+      "regexes": [
+        "^projects\\/[^\\n\\r\\/]+\\/topics\\/[^\\n\\r\\/]+$"
+      ]
+    }
+  ], 
+  "description": "A pipeline that reads a text file stored in GCS and outputs each line to a Pub/Sub topic."
+}

@@ -1,0 +1,6 @@
+runtime: nodejs
+env: flex
+service: default # dataCollector
+
+env_variables:
+  'GCP_ProjectId': 'dataflowdemo-196913'

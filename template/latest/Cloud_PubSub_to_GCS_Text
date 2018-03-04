@@ -1,0 +1,932 @@
+{
+  "clientRequestId" : "20180302212923029_6127",
+  "environment" : {
+    "dataset" : "bigquery.googleapis.com/cloud_dataflow",
+    "sdkPipelineOptions" : {
+      "options" : {
+        "dataflowEndpoint" : "",
+        "outputShardTemplate" : null,
+        "experiments" : null,
+        "project" : "dataflow-templates",
+        "outputFilenameSuffix" : null,
+        "inputTopic" : null,
+        "overrideWindmillBinary" : null,
+        "streaming" : true,
+        "enableCloudDebugger" : false,
+        "zone" : null,
+        "gcpTempLocation" : "gs://dataflow-staging-us-central1-473832897378/temp/",
+        "numShards" : 1,
+        "outputDirectory" : null,
+        "runner" : "org.apache.beam.runners.dataflow.DataflowRunner",
+        "credentialFactoryClass" : "org.apache.beam.sdk.extensions.gcp.auth.GcpCredentialFactory",
+        "outputFilenamePrefix" : null,
+        "googleApiTrace" : null,
+        "jobName" : "pubsubtotext-dataflow0releaser-0302212921-f4d5477",
+        "windowDuration" : "5m",
+        "appName" : "PubsubToText",
+        "optionsId" : 0,
+        "apiRootUrl" : "https://dataflow.googleapis.com/",
+        "userAgent" : "Apache_Beam_SDK_for_Java/2.2.0",
+        "stagingLocation" : "gs://dataflow-templates-libraries/2018-03-02-00_RC00",
+        "stagerClass" : "org.apache.beam.runners.dataflow.util.GcsStager",
+        "tempLocation" : "gs://dataflow-staging-us-central1-473832897378/temp/",
+        "stableUniqueNames" : "WARNING",
+        "saveProfilesToGcs" : null,
+        "numberOfWorkerHarnessThreads" : 0,
+        "gcsUploadBufferSizeBytes" : 1048576,
+        "templateLocation" : "gs://dataflow-templates-staging/2018-03-02-00_RC00/Cloud_PubSub_to_GCS_Text",
+        "pathValidatorClass" : "org.apache.beam.sdk.extensions.gcp.storage.GcsPathValidator"
+      },
+      "display_data" : [ {
+        "namespace" : "org.apache.beam.sdk.options.PipelineOptions",
+        "key" : "userAgent",
+        "type" : "STRING",
+        "value" : "Apache_Beam_SDK_for_Java/2.2.0"
+      }, {
+        "namespace" : "org.apache.beam.sdk.options.PipelineOptions",
+        "key" : "runner",
+        "type" : "JAVA_CLASS",
+        "value" : "org.apache.beam.runners.dataflow.DataflowRunner",
+        "shortValue" : "DataflowRunner"
+      }, {
+        "namespace" : "org.apache.beam.runners.dataflow.options.DataflowPipelineOptions",
+        "key" : "project",
+        "type" : "STRING",
+        "value" : "dataflow-templates"
+      }, {
+        "namespace" : "org.apache.beam.sdk.options.StreamingOptions",
+        "key" : "streaming",
+        "type" : "BOOLEAN",
+        "value" : true
+      }, {
+        "namespace" : "org.apache.beam.sdk.options.PipelineOptions",
+        "key" : "jobName",
+        "type" : "STRING",
+        "value" : "pubsubtotext-dataflow0releaser-0302212921-f4d5477"
+      }, {
+        "namespace" : "org.apache.beam.sdk.options.PipelineOptions",
+        "key" : "tempLocation",
+        "type" : "STRING",
+        "value" : "gs://dataflow-staging-us-central1-473832897378/temp/"
+      }, {
+        "namespace" : "org.apache.beam.sdk.options.ApplicationNameOptions",
+        "key" : "appName",
+        "type" : "STRING",
+        "value" : "PubsubToText"
+      }, {
+        "namespace" : "org.apache.beam.runners.dataflow.options.DataflowPipelineOptions",
+        "key" : "templateLocation",
+        "type" : "STRING",
+        "value" : "gs://dataflow-templates-staging/2018-03-02-00_RC00/Cloud_PubSub_to_GCS_Text"
+      }, {
+        "namespace" : "org.apache.beam.runners.dataflow.options.DataflowPipelineOptions",
+        "key" : "stagingLocation",
+        "type" : "STRING",
+        "value" : "gs://dataflow-templates-libraries/2018-03-02-00_RC00"
+      }, {
+        "namespace" : "org.apache.beam.sdk.extensions.gcp.options.GcsOptions",
+        "key" : "gcsUploadBufferSizeBytes",
+        "type" : "INTEGER",
+        "value" : 1048576
+      } ]
+    },
+    "tempStoragePrefix" : "storage.googleapis.com/dataflow-staging-us-central1-473832897378/temp/",
+    "userAgent" : {
+      "os.arch" : "amd64",
+      "name" : "Apache Beam SDK for Java",
+      "java.version" : "1.8.0_112-google-v7",
+      "fnapi.environment.major.version" : "1",
+      "os.version" : "4.3.5-smp-810.15.0.0",
+      "os.name" : "Linux",
+      "java.vendor" : "Google Inc.",
+      "version" : "2.2.0",
+      "container.version" : "2.2.0",
+      "legacy.environment.major.version" : "6"
+    },
+    "version" : {
+      "major" : "6",
+      "job_type" : "STREAMING"
+    },
+    "workerPools" : [ {
+      "autoscalingSettings" : {
+        "maxNumWorkers" : 0
+      },
+      "dataDisks" : [ { } ],
+      "numWorkers" : 0,
+      "packages" : [ {
+        "location" : "gs://dataflow-templates-libraries/2018-03-02-00_RC00/teleport-all-bundled-I6CuiHHI6lnxFA7Iom5aTA.jar",
+        "name" : "teleport-all-bundled-I6CuiHHI6lnxFA7Iom5aTA.jar"
+      } ],
+      "workerHarnessContainerImage" : "dataflow.gcr.io/v1beta3/beam-java-streaming:2.2.0"
+    } ]
+  },
+  "name" : "pubsubtotext-dataflow0releaser-0302212921-f4d5477",
+  "steps" : [ {
+    "kind" : "ParallelRead",
+    "name" : "s1",
+    "properties" : {
+      "user_name" : {
+        "@type" : "http://schema.org/Text",
+        "value" : "Read PubSub Events/PubsubUnboundedSource"
+      },
+      "display_data" : [ ],
+      "format" : {
+        "@type" : "http://schema.org/Text",
+        "value" : "pubsub"
+      },
+      "output_info" : [ {
+        "output_name" : {
+          "@type" : "http://schema.org/Text",
+          "value" : "1"
+        },
+        "user_name" : {
+          "@type" : "http://schema.org/Text",
+          "value" : "Read PubSub Events/PubsubUnboundedSource.out0"
+        },
+        "encoding" : {
+          "@type" : "kind:windowed_value",
+          "is_wrapper" : {
+            "@type" : "http://schema.org/Boolean",
+            "value" : true
+          },
+          "component_encodings" : [ {
+            "@type" : "org.apache.beam.sdk.coders.CustomCoder",
+            "type" : {
+              "@type" : "http://schema.org/Text",
+              "value" : "org.apache.beam.sdk.io.gcp.pubsub.PubsubMessagePayloadOnlyCoder"
+            },
+            "serialized_coder" : {
+              "@type" : "http://schema.org/Text",
+              "value" : "%82SNAPPY%00%00%00%00%01%00%00%00%01%00%00%00%8f%b8%01%f0U%ac%ed%00%05sr%00?org.apache.beam.sdk.io.gcp.pubsub.PubsubMessagePayloadOnlyCoder%9b:%cf%a9%1f+%09:%02%00%00xr%00&NN%004coders.CustomC%01%0d j%b0%08%9d%0b;%1d%0b%02%055%00 n5%00%01/0C%dd%d5%89%ae%bc~%f8%02%00%00xp"
+            }
+          }, {
+            "@type" : "kind:global_window"
+          } ]
+        }
+      } ],
+      "pubsub_topic_runtime_override" : {
+        "@type" : "http://schema.org/Text",
+        "value" : "inputTopic"
+      }
+    }
+  }, {
+    "kind" : "ParallelDo",
+    "name" : "s2",
+    "properties" : {
+      "serialized_fn" : {
+        "@type" : "http://schema.org/Text",
+        "value" : "%82SNAPPY%00%00%00%00%01%00%00%00%01%00%00%07%5c%bd%1d%f0O%ac%ed%00%05sr%00!org.apache.beam.sdk.util.DoFnInfo%11%8ed%e2%c7+%87%1b%02%00%06J%00%0amainOutputL%00%04doFnt%00%25Lorg/%09D%00/%01D</sdk/transforms/%01JH;L%00%0ainputCodert%00%22LoJ5%00%00c%01%1d%04s/%05$%14;L%00%09ou%01j,Mapt%00%0fLjava/%01%9b0/Map;L%00%0esideI%01T%1cViewst%00%14%09#%90lang/Iterable;L%00%11windowingStrategyt%00.R%7f%00%1cvalues/W>0%00%0c;xp%00%09%01%10%02sr%00,N3%01%19%ef%90.MapElements$1rO@%86%09P%b93%02%00%01L%00%06this$0t%00,R%7f%00%19D%01%e2%11D%10;xr%00#zs%00!b@%acD#%06%ce%93%bd%9d%02%00%00xpsr%00*z4%00%1d%a7H%8b%c3e?%d4@%aa%d3%02%00%02L%00%02fnt%00/~%a1%000SimpleFunctio!%deT%12fnClassDisplayDatat%00=~G%00%00d%09.%00/%1d6 $ItemSpec%01%f9%00)z%c5%00%04PTQg +%16Uq%88%89f%c7%03%01%ff%10xsr%00=N;%008io.gcp.pubsub.P%05%07pIO$ParsePayloadAsUtf8%07%1d%0a%e1W%a6%f0%af!N%08r%00-NL%009%af%00.6%0e%01%1cb%a2%ef%dajq%cet%25%f4%25O%005~%08%01%1cSerializA%b35U%04xp!%c8%00Ez|%00-C,.AutoValue_D)U!%83%00_1ML0%b5%12S%c4%d1%faQ%02%00%07L%00%03keyt%00%12}/pString;L%00%05labelq%00~%00%15L%00%07linkUr%11%0f0%09namespacet%00%11%1d=%25%f8a%e1%10short%05%846^%00@Object;L%00%04typet%009~%0f%01%0d%d42%17%02%08Typa%ce%00%05e%a5%01%a1%10%17xr%00;%9a%1d%01=%13U`%1c%acD %db1?%19%02!%e3<pt%00%05mapFnt%00%0cMap 1%84%10ppt%00%12F%1e%02%0c~r%007%caz%00%01%c3%89H %00%00%12%00%00xr%00%0e%81%d5%00.%81%b2%10.Enum.%1d%008pt%00%0aJAVA_CLASSt%fa%d0%02%0csr%00?N%b2%00N%11%03%18Messagem%10%10OnlyC%a1%98%1c%9b:%cf%a9%1f+%09:!0%08r%00&NN%00%a9%c0%18.Custom%055%1cj%b0%08%9d%0b;%1d%0b%095%00 n5%00%01d%1cC%dd%d5%89%ae%bc~%f8%01/A%fd%00c>1%00%e8runners.dataflow.repackaged.com.google.common.collect.Immuta%5c%14BiMap$qn%10edFor5u%01t%08r%00a%fer%00:r%00np%00,%02[%00%04keyst%00%13[}Pm/%08[%00%06E%ec%00sA%ed%10)xpur%11'I1%0d'%1c%90%ceX%9f%10s)l%01%bf%c1%a7%04%01s2W%02<Long;%8b%e4%90%cc%8f#%df%02%00%01JmA%0cxr%00%10Y|4Number%86%ac%95%1d%0b%94%e0%8b%11J%01%01%04%02u%01~%08+%00%00%05XR%88%06%09%a5%90.TupleTag%b3%18yf[%c0z%b5%02%00%02Z%00%09generatedL%00%02id%01L %15xp%00t%00%06ou%e1%db%0csr%00%1f%05%87%e1%d8%04.C)%afTions$EmptyListz%b8%17%b4<%a7%9e%de%05%96^%7f%07%0d%84B%ba%07p%a4Mf$.%cc%15%e5%02%00%0bZ%00%18allowedLateness%c1e,ifiedZ%00%0dmode%1d%10D%1atimestampCombiner%1d%1d%14%10trigg%1d%13%08L%00%0f:[%00%08t%00%18%85%e4%10joda/%01L%10/Dura%01%daT;L%00%0fclosingBehaviort%00A%05-%04ap%0e%87%09RC%09%22%c3%08%1a%9d%08%04$C6C%00%a1%5c%01%c3%08t%00?RK%00) %0d=%00i&%0a%09%1c$Accumul%05%9b%08Mod%a1b%18%0eonTime%19%9e%00@RS%00%d9%ffF%9e%00%00O2B%00%0e%84%09!%042P%01%08t%00<%a6W%00%01%902>%00%0c;L%00%07-%86%08t%002%aaI%00)%ba%0c;L%00%08)S%10Fnt%003%a6@%00Ia%04Fn%1a%12%0a%0csr%00%16%810!%e7%00.%01%e3%00.1%e7%1c%00%00%02?zQ%ce%d6A%b6%08r%00%1f6%25%00 base.Base%1d.%10Y%19:%f4%8ee%a1%1c%07iMillise%ce%05%01%00~Z%bd%059%83%00.%09%ce%0cing.%09%a3>!%02%05H%cdwa%86T%1ft%00%11FIRE_IF_NON_EMPTY~Z6%09I>%0dZn>%02%01b%01%01%c1%dd%0df,%16DISCARDING_%01q(D_PANES~r%00>!%15I%f4%04.b%1e{%0cn%d3%006V%02%01h%01%01%1dl%00%0b%01a%14_ALWAY%01a%00:%a2a%00B`%02%01Y%01%01%1d]@%0dEND_OF_WINDOWsr%00~%02%089%93%18DefaultM}%1c%b1%0a%e3%87%d1%bd:sI%1b%000%a6%a5%00I%bc%1c6M3!y%faA%0f%12^%0a%0c%0bsub%0d%18%0cst%00%10%c9E%a1L%00/%a1;%08;xp!%86%105sr%006%a2g%00%14GlobalIF s%91%0c%e4%e00%f3%16 %09%ac%00;%a2E%00$NonMerging%09I$FnW%06%0bg%d3%ee%a8%ab%09J%001%a2J%00%11@0%c6%04%19y%ba%8a%96W%02%00%00xp"
+      },
+      "non_parallel_inputs" : { },
+      "user_name" : {
+        "@type" : "http://schema.org/Text",
+        "value" : "Read PubSub Events/MapElements/Map"
+      },
+      "user_fn" : {
+        "@type" : "http://schema.org/Text",
+        "value" : "org.apache.beam.sdk.transforms.MapElements$1"
+      },
+      "display_data" : [ {
+        "namespace" : "org.apache.beam.sdk.transforms.ParDo$SingleOutput",
+        "key" : "fn",
+        "type" : "JAVA_CLASS",
+        "value" : "org.apache.beam.sdk.transforms.MapElements$1",
+        "shortValue" : "",
+        "label" : "Transform Function"
+      }, {
+        "namespace" : "org.apache.beam.sdk.transforms.MapElements",
+        "key" : "mapFn",
+        "type" : "JAVA_CLASS",
+        "value" : "org.apache.beam.sdk.io.gcp.pubsub.PubsubIO$ParsePayloadAsUtf8",
+        "shortValue" : "ParsePayloadAsUtf8",
+        "label" : "Map Function"
+      } ],
+      "parallel_input" : {
+        "@type" : "OutputReference",
+        "output_name" : "1",
+        "step_name" : "s1"
+      },
+      "output_info" : [ {
+        "output_name" : {
+          "@type" : "http://schema.org/Text",
+          "value" : "2"
+        },
+        "user_name" : {
+          "@type" : "http://schema.org/Text",
+          "value" : "Read PubSub Events/MapElements/Map.out0"
+        },
+        "encoding" : {
+          "@type" : "kind:windowed_value",
+          "is_wrapper" : {
+            "@type" : "http://schema.org/Boolean",
+            "value" : true
+          },
+          "component_encodings" : [ {
+            "@type" : "org.apache.beam.sdk.coders.StringUtf8Coder"
+          }, {
+            "@type" : "kind:global_window"
+          } ]
+        }
+      } ]
+    }
+  }, {
+    "kind" : "Bucket",
+    "name" : "s3",
+    "properties" : {
+      "serialized_fn" : {
+        "@type" : "http://schema.org/Text",
+        "value" : "%0aB%22@%0a%13IntervalWindowCoder%12)%0a'%0a%25%0a#urn:beam:coders:interval_window:0.1j%8d%03%0a%e7%02%0a%e4%02%0a%1durn:beam:windowfn:javasdk:0.1%1a%c2%02%82SNAPPY%00%00%00%00%01%00%00%00%01%00%00%01.%c5%03%f0}%ac%ed%00%05sr%005org.apache.beam.sdk.transforms.windowing.FixedWindows%04i?%b6%ed%bf;%88%02%00%02L%00%06offsett%00%18Lorg/joda/time/Duration;L%00%04sizeq%00~%00%01xr%00=or%9at%004PartitioningWi%01%8a@Fnl%9a2%95%8c%90%00%83%02%00%00xr%00;%a2%c0%00%18NonMerg%1dJ%1cW%06%0bg%d3%ee%a8%ab%09J%001%a2J%00%11%8a%1c%c6%04%19y%ba%8a%96W%01@%10psr%00%16%01B%01%ff$.time.Dura%01%bc%1c%00%00%02?zQ%ce%d6%01'%08r%00%1f6%25%00 base.Base%1d.PY%19:%f4%8e%02%00%01J%00%07iMillisxp%00%0d%014sq%00~%00%06%00%00%00%00%00%04%93%e0%1a%13IntervalWindowCoder%22%02:%00(%010%018%02H%01P%01"
+      },
+      "user_name" : {
+        "@type" : "http://schema.org/Text",
+        "value" : "5m Window/Window.Assign"
+      },
+      "display_data" : [ {
+        "namespace" : "org.apache.beam.sdk.transforms.windowing.FixedWindows",
+        "key" : "size",
+        "type" : "DURATION",
+        "value" : 300000,
+        "label" : "Window Duration"
+      }, {
+        "namespace" : "org.apache.beam.sdk.transforms.windowing.Window$Assign",
+        "key" : "windowFn",
+        "type" : "JAVA_CLASS",
+        "value" : "org.apache.beam.sdk.transforms.windowing.FixedWindows",
+        "shortValue" : "FixedWindows",
+        "label" : "Windowing Function"
+      } ],
+      "parallel_input" : {
+        "@type" : "OutputReference",
+        "output_name" : "2",
+        "step_name" : "s2"
+      },
+      "output_info" : [ {
+        "output_name" : {
+          "@type" : "http://schema.org/Text",
+          "value" : "3"
+        },
+        "user_name" : {
+          "@type" : "http://schema.org/Text",
+          "value" : "5m Window/Window.Assign.out0"
+        },
+        "encoding" : {
+          "@type" : "kind:windowed_value",
+          "is_wrapper" : {
+            "@type" : "http://schema.org/Boolean",
+            "value" : true
+          },
+          "component_encodings" : [ {
+            "@type" : "org.apache.beam.sdk.coders.StringUtf8Coder"
+          }, {
+            "@type" : "kind:interval_window"
+          } ]
+        }
+      } ]
+    }
+  }, {
+    "kind" : "ParallelDo",
+    "name" : "s4",
+    "properties" : {
+      "serialized_fn" : {
+        "@type" : "http://schema.org/Text",
+        "value" : "%82SNAPPY%00%00%00%00%01%00%00%00%01%00%00%0c%f8%b64%f0O%ac%ed%00%05sr%00!org.apache.beam.sdk.util.DoFnInfo%11%8ed%e2%c7+%87%1b%02%00%06J%00%0amainOutputL%00%04doFnt%00%25Lorg/%09D%00/%01D</sdk/transforms/%01JH;L%00%0ainputCodert%00%22LoJ5%00%00c%01%1d%04s/%05$%14;L%00%09ou%01j,Mapt%00%0fLjava/%01%9b0/Map;L%00%0esideI%01T%1cViewst%00%14%09#%90lang/Iterable;L%00%11windowingStrategyt%00.R%7f%00%1cvalues/W>0%00%0c;xp%00%09%01%10%04sr%002N3%01%b0io.WriteFiles$ApplyShardingKey%c6%8a%d8%ba%c7Ljk%02%00%05I%00%0bs%01%19LNumberL%00%10destination%05%f8(q%00~%00%02L%00%11num%05B%14sProvi%255%00+R%b6%00%04op%01<%08s/V%01%be%11-%0c;L%00%0d%15B! %08t%00,R>%00%0d%f4%18PCollec%01J%01.0;L%00%06this$0t%00#R8%00%08io/%19%f1%10;xr%00#N%17%01Y%06EPP%acD#%06%ce%93%bd%9d%02%00%00xp%ff%ff%ff%ffsr%00$N8%00I%09%10.Void%25%15%1c%a8~b5%1e%f3l%f7%019%08r%00&j3%00%14Atomic%055%1c%c7%ec%b5%cc%85tPF%095%00*j5%00 Structure%09n%1cs%bf%12%0e%d5%d46%11%099%00 j9%00%05h%1cC%dd%d5%89%ae%bc~%f8%01/%10psr%00=N1%00-%a6%00.2%a6%01%18$Static2%14%004%9c%e2%e1%8f%09%d9W%b0%02%00%01L%00%05%25%9f%08t%00%12]%db%18Object;%05k%00%11a%15%00.A%f2L.Integer%12%e2%a0%a4%f7%81%878%02%00%01I%0d?%0cxr%00%10%19(Iy%1c%86%ac%95%1d%0b%94%e0%8b%05%b4%0c%00%00%00%01%01%b9R%0d%042%da%02L%92%c3%9c%c9%fd%e0%8e%c3%02%00%07I%00%16maxNumE%074rsPerBundleZ%00%0eir%04ed%05%1b,sL%00%10computeNQ%d4%00tZ%cc%02Y0%08/PT%91Ba%c4U%ccQ%e1a'%0c%08L%00%0a%95%05%0cst%00%10)&%85$8List;L%00%04sinkt%00&^%c4%02a%b0 BasedSink%81U%00wa%c6%0cOpere%92%08t%005%92:%00%00$%05%ea%157a%10%00)N%06%02%19%e0%00.%19%e0 +%16Uq%88%89f%c7%03a%16%18x%00%00%00%14%01p%01%df%10%14sr%00UNF%00Prepackaged.com.google%01%0b%10mon.ci%c9%14.Immut%a1%03!%0a8$SerializedForm%89%cd4%00%00%02%00%01[%00%08elemen!A%04%13[)BAQYh%04ur%11%19IjM%81%1c%90%ceX%9f%10s)lQC%10%00sr%00%1fN%af%00%18io.Text!b %805%1d%f2%e9%1a%89{%02%81%e3%10%06foot%c1%0d.%de%02%14String%81%80%10heade%25%e8%04%25xZ'%04%08io.2%c1%01T%5c%a06Hi%80%a1@%02%00%03L%00%13dynamicD%b9a%0cst%00:%96%d0%01%00DF<%00@;L%00%15tempDirectory:%8b%02%00%1aA;!q0ByteChannelFa%05*%08t%00A%96w%00AGVC%00i%f0%00EZ`%01%0d%af!%0d.%ef%00 $Constant%01%19DnamePolicy%c4%e2%1cH%c4%e9f%af%25%86%0c%0efil%1d%1c%a2%f2%026S%00a;%e1%ee%10atFun%c5G^I%00y%03%00/Q%95%01%f2%117a;%008Z%e6%00%01su%adN%a3%01%1ccC%05@^_%1f%f9%a5<%00%11%95%1b(Accessort%00L%96%87%01-O2K%01%04Si%1an%08%11N%08;xp%a15%003.%83%030loud.teleportA%9f%16L%08%04ed%01%bb9%814%0d%0fN%f6a#%96S%02%00%04L%00%0f%16%e6%08UW%08q%00~%81%da%00%14%09%17%159%14refixq%09%1c%04%0ds%0eC%08%1cTemplate%0d%15%0c%06suf%11#%0cxr%003%92E%01%15_E%19%1cmsId%b0%b5%11*e%d3%0csr%00>ND%00V%ca%06%18Runtime2%cb%06P%b4%fa%ab@u%f5%e5%81%02%00%05L%00%0cdefault%05%22%01%b3,%13L%00%05klasst%00%11%9dw%00C%01%13%0e/%0a methodNam%05.%00%25%0e%0f%0a%16%ea%08%04Id%b5%eb%85%a9%04Lo%851 %0cproperty%153%18xppvr%008f%a1%01a%cf!B$s.PubsubTo%81%a9%04$O%09h%b1&%00%00%a1%98%14t%00%12get%16%fb%0a5%ab%0csr%00%0e%f9Z%05%88(%8b%e4%90%cc%8f#%df%02%00%01J%f1%7f%01%ed%00%16%01F%01%01%00tB%f0%01%00s%01 %0c3t%00%06)%f1%01%0e%0c8t%00%17%15n5%a3U%02%04;tV%1e%02%11J<%0cW-P-SS-of-NNq%00~%01P%00%16%15P%12V%0a.<%02%0c;t%00%13%09|2%1b%00%11N%00%00%0dBF%92%00%00SUqF%92%00%09%1c^%0e%09%99%05%00.N%05%04Ds$Identity%1bn%f7C9'S%d0Q%92%aa%5c%09%14NestedEo%b1%aa%1c%bb%13Y~K%e2%a8S%85%f9%00%0a%05%85%0clato%c5e%00,%1en%09%01%ef%04%08xA%ff%005N%ff%02>t%06%18$ExtracY%15%1c!=%0f%109%18%f6%a6%09%b3%01N%00K%0ei%0dY(%14invoke%15%f9hedLambdaoa%d0%94,)6%85%02%00%0aI%00%0eimplMe%02$Kind[%00%0ccap%12%a2%0a%08Arg%05U%0c L%00%0e%09%14%0cingCa5%01k%144L%00%18fu%a9%82(alInterface%15 %0c%25L%00%1dJ %00%09ju9%08L%00%22b%25%00%10Signa%01%8a%01oa%96%01%aa.`%00%1d%bb%1dQ%00%13%01'%09g>B%00%04%16i%c9%a5%10iated%09#%08Typ%09`%12z%0d%04%06u%01l%00%22a?%0cvr%000%be%d0%03%018%0d%01%08xpt%a5%19%00/j%af%0eN%91%02%0ct%00%05a%0e%d4%0d%0ct%00&(%9d%ac%1a%0a%09%00)F%13%00%00t%05%a7%00/%16%9b%09%00/%c5%18%00/%d1%18%00/%95w%00/.w%04%0ct%00%15lE%09D$run$9642cd19$1t%00:.t%00%00S%16!%09%00)^%ca%064fs/ResourceId;!9%00Z%01%05%106~r%004%92%d0%02(Compression!%87-:%10%00%12%00%00x2%ef%04%08Enu%22I%0a%01%1d<pt%00%0cUNCOMPRESSED%e5%1e^-%0f%a1h%0e%11%0a%00$%01%09%0e%f6%08&=%0b%1c{yA%de%c0%87%ba+e%a5%1a$%0a%01%c2%08%25L%00:%14%0a%96%e3%066^%00,Bq%a8%22%d0%a8L%d4%02%00%03ZF%a9%0c%00%04%0e/%0c%01m%0c%1bL%00%0d!%a7%00D%1e%ed%09%01%15%0c%08xp%01%01%08%00)eka%d6%00M%92R%016%82%00%00$%a1|%10orary%15]8Builder%15%9fW%8b%96op%ae%09%fa%01%7f%04Id%01p%0c5L%00%09%e1]%0cstam%12%1a%0c%04%25x%05%07%a1%b9H2018-03-02_21-29-21%013%00L%25~z%f4%0e%18ingUtf8%12%c5%0e%1cL%0d}%1d%cb%01%cd%a4%81%b6%01A%10%0esr%00c>%de%00<runners.dataflow%ba%8a%0c%10BiMapb%8b%0cA_%00a%fer%00:r%00np%00%14%02[%00%04ke%e9%7f%0c [%00%06%12k%0f%25%da%08 xp%95r%00%01%05%12%00:m%06%00%04%1d%18Z%f3%10%09Gd.TupleTag%b3%18yf[%c0z%b5%02%00%02Z%00%09gen%0eZ%0e%14edL%00%02i%25%dc%81%e22%fc%07%10!sr%00,>%07%01%0e%96%13%0dY%16R%0a*%ce%12H%a4Mf$.%cc%15%e5%02%00%0bZ%00%18allow%c1STtenessSpecifiedZ%00%0dmode%1d%10%00%1aUS%1cCombiner%1d%1d%14%10trigg%1d%13%08L%00%0f:[%00%0ct%00%18L%0e%c5%13%10joda/%01L%08/Du%166%0f@;L%00%0fclosingBehavi%0e{%0b%00A%05-jx%05%165%10%08ing%1a%81%13%04$C6C%00%0c;L%00%04%01%c3%08t%00?RK%00) %0d=%00i&%ee%13%1c$Accumul%12%d1%0f%08Mod%0e%14%14%18%0eonTime%19%9e%00@RS%00%12%22%08%0e%d7%0c%00sF%9e%00%00O2B%00%0c;L%00%11!%04e%a31P%08t%00<%a6W%00%01%902>%00%0c;L%00%07-%86%08t%002%aaI%00)%ba%0c;L%00%08)S%10Fnt%003%a6@%00Ia%04Fn%1a%f6%14%0csr%00%16A%8f!%e7%00.%01%e3%00.1%e7%1c%00%00%02?zQ%ce%d6%813%1a%fb%0f%19%25%10base.%0e%ad%0d%1d.%10Y%19:%f4%8e%12%1a%0b%1c%07iMillis%e5%df%05%01%0c~r%00?%01gI!&%8c%169%83%00.%09%ce%0cing.%09%a3>!%02%05H%00%00%c9%aa%81%c3T%5ct%00%11FIRE_IF_NON_EMPTY~Z%a0%13I>%0dZn>%02%01b%01%01%c1%f3%0df,%16DISCARDING_%01q%1cD_PANES~ZA%0dn%d3%006V%02%01h%01%01%1dl%00%0b%01a%14_ALWAY%01a%00:%a24%01B`%02%01Y%01%01%1d]D%0dEND_OF_WINDOWsr%007%a2_%00%00D%16%de%0dM}%1c%b1%0a%e3%87%d1%bd:sI%1b%000%a2F%00%0d?%1c6M3!y%faA%0f%12%c8%0f%00%0b%0e%99%0dI%d4%a5%8c%00%1a%12%9c%0b%00%1f%12P%0b%0e%eb%13%00.&%bb%16%18s$Empty%0e%f2%12%1cz%b8%17%b4<%a7%9e%de%01%82b%cc%0bR%8a%01%10FixedIb s%04i?%b6%ed%bf;%88%e9%92%10offse%12%a1%0d%00r%12Z%14%00z%12%a4%0a%04rxZS%02R^%00%10Parti%0eg%17%08ing%09e$Fnl%9a2%95%8c%90%00%83%01%ac%08r%00;%a2.%01%18NonMerg%1dJ%1cW%06%0bg%d3%ee%a8%ab%09J%001%a2J%00%11%8a%1c%c6%04%19y%ba%8a%96W%01@%12c%088|sq%00~%00z%00%00%00%00%00%04%93%e0"
+      },
+      "non_parallel_inputs" : { },
+      "user_name" : {
+        "@type" : "http://schema.org/Text",
+        "value" : "Write File(s)/WriteFiles/ApplyShardLabel"
+      },
+      "user_fn" : {
+        "@type" : "http://schema.org/Text",
+        "value" : "org.apache.beam.sdk.io.WriteFiles$ApplyShardingKey"
+      },
+      "display_data" : [ {
+        "namespace" : "org.apache.beam.sdk.transforms.ParDo$SingleOutput",
+        "key" : "fn",
+        "type" : "JAVA_CLASS",
+        "value" : "org.apache.beam.sdk.io.WriteFiles$ApplyShardingKey",
+        "shortValue" : "ApplyShardingKey",
+        "label" : "Transform Function"
+      } ],
+      "parallel_input" : {
+        "@type" : "OutputReference",
+        "output_name" : "3",
+        "step_name" : "s3"
+      },
+      "output_info" : [ {
+        "output_name" : {
+          "@type" : "http://schema.org/Text",
+          "value" : "4"
+        },
+        "user_name" : {
+          "@type" : "http://schema.org/Text",
+          "value" : "Write File(s)/WriteFiles/ApplyShardLabel.out0"
+        },
+        "encoding" : {
+          "@type" : "kind:windowed_value",
+          "is_wrapper" : {
+            "@type" : "http://schema.org/Boolean",
+            "value" : true
+          },
+          "component_encodings" : [ {
+            "@type" : "kind:pair",
+            "is_pair_like" : {
+              "@type" : "http://schema.org/Boolean",
+              "value" : true
+            },
+            "component_encodings" : [ {
+              "@type" : "org.apache.beam.sdk.coders.CustomCoder",
+              "type" : {
+                "@type" : "http://schema.org/Text",
+                "value" : "org.apache.beam.sdk.coders.ShardedKeyCoder"
+              },
+              "serialized_coder" : {
+                "@type" : "http://schema.org/Text",
+                "value" : "%82SNAPPY%00%00%00%00%01%00%00%00%01%00%00%00%f0%8a%03%f0@%ac%ed%00%05sr%00*org.apache.beam.sdk.coders.ShardedKeyCoder=|Z%106%008%cc%02%00%02L%00%08k%0d%16 t%00%22Lorg/a%05D%00/%01D%10/sdk/%09D%00/%05:8;L%00%10shardNumber%05%14%08t%00(n8%00%14VarInt%05*%04;xz%a7%00 tructured%05/8s%bf%12%0e%d5%d46%11%02%00%00xr%00 j%e0%00%05/%1cC%dd%d5%89%ae%bc~%f8%01/%10psr%00&j1%00%1d%95%1c%c0K2%da%a9KVh%017v5%00%14Atomic%05lT%c7%ec%b5%cc%85tPF%02%00%00xq%00~%00%03q%00~%00%08"
+              }
+            }, {
+              "@type" : "org.apache.beam.sdk.coders.StringUtf8Coder"
+            } ]
+          }, {
+            "@type" : "kind:interval_window"
+          } ]
+        }
+      } ]
+    }
+  }, {
+    "kind" : "GroupByKey",
+    "name" : "s5",
+    "properties" : {
+      "serialized_fn" : {
+        "@type" : "http://schema.org/Text",
+        "value" : "%0aB%22@%0a%13IntervalWindowCoder%12)%0a'%0a%25%0a#urn:beam:coders:interval_window:0.1j%8d%03%0a%e7%02%0a%e4%02%0a%1durn:beam:windowfn:javasdk:0.1%1a%c2%02%82SNAPPY%00%00%00%00%01%00%00%00%01%00%00%01.%c5%03%f0}%ac%ed%00%05sr%005org.apache.beam.sdk.transforms.windowing.FixedWindows%04i?%b6%ed%bf;%88%02%00%02L%00%06offsett%00%18Lorg/joda/time/Duration;L%00%04sizeq%00~%00%01xr%00=or%9at%004PartitioningWi%01%8a@Fnl%9a2%95%8c%90%00%83%02%00%00xr%00;%a2%c0%00%18NonMerg%1dJ%1cW%06%0bg%d3%ee%a8%ab%09J%001%a2J%00%11%8a%1c%c6%04%19y%ba%8a%96W%01@%10psr%00%16%01B%01%ff$.time.Dura%01%bc%1c%00%00%02?zQ%ce%d6%01'%08r%00%1f6%25%00 base.Base%1d.PY%19:%f4%8e%02%00%01J%00%07iMillisxp%00%0d%014sq%00~%00%06%00%00%00%00%00%04%93%e0%1a%13IntervalWindowCoder%22%02:%00(%010%018%02H%01P%01"
+      },
+      "user_name" : {
+        "@type" : "http://schema.org/Text",
+        "value" : "Write File(s)/WriteFiles/GroupIntoShards"
+      },
+      "display_data" : [ ],
+      "parallel_input" : {
+        "@type" : "OutputReference",
+        "output_name" : "4",
+        "step_name" : "s4"
+      },
+      "disallow_combiner_lifting" : {
+        "@type" : "http://schema.org/Boolean",
+        "value" : true
+      },
+      "output_info" : [ {
+        "output_name" : {
+          "@type" : "http://schema.org/Text",
+          "value" : "5"
+        },
+        "user_name" : {
+          "@type" : "http://schema.org/Text",
+          "value" : "Write File(s)/WriteFiles/GroupIntoShards.out0"
+        },
+        "encoding" : {
+          "@type" : "kind:windowed_value",
+          "is_wrapper" : {
+            "@type" : "http://schema.org/Boolean",
+            "value" : true
+          },
+          "component_encodings" : [ {
+            "@type" : "kind:pair",
+            "is_pair_like" : {
+              "@type" : "http://schema.org/Boolean",
+              "value" : true
+            },
+            "component_encodings" : [ {
+              "@type" : "org.apache.beam.sdk.coders.CustomCoder",
+              "type" : {
+                "@type" : "http://schema.org/Text",
+                "value" : "org.apache.beam.sdk.coders.ShardedKeyCoder"
+              },
+              "serialized_coder" : {
+                "@type" : "http://schema.org/Text",
+                "value" : "%82SNAPPY%00%00%00%00%01%00%00%00%01%00%00%00%f0%8a%03%f0@%ac%ed%00%05sr%00*org.apache.beam.sdk.coders.ShardedKeyCoder=|Z%106%008%cc%02%00%02L%00%08k%0d%16 t%00%22Lorg/a%05D%00/%01D%10/sdk/%09D%00/%05:8;L%00%10shardNumber%05%14%08t%00(n8%00%14VarInt%05*%04;xz%a7%00 tructured%05/8s%bf%12%0e%d5%d46%11%02%00%00xr%00 j%e0%00%05/%1cC%dd%d5%89%ae%bc~%f8%01/%10psr%00&j1%00%1d%95%1c%c0K2%da%a9KVh%017v5%00%14Atomic%05lT%c7%ec%b5%cc%85tPF%02%00%00xq%00~%00%03q%00~%00%08"
+              }
+            }, {
+              "@type" : "kind:stream",
+              "is_stream_like" : {
+                "@type" : "http://schema.org/Boolean",
+                "value" : true
+              },
+              "component_encodings" : [ {
+                "@type" : "org.apache.beam.sdk.coders.StringUtf8Coder"
+              } ]
+            } ]
+          }, {
+            "@type" : "kind:interval_window"
+          } ]
+        }
+      } ],
+      "is_merging_window_fn" : {
+        "@type" : "http://schema.org/Boolean",
+        "value" : false
+      }
+    }
+  }, {
+    "kind" : "ParallelDo",
+    "name" : "s6",
+    "properties" : {
+      "serialized_fn" : {
+        "@type" : "http://schema.org/Text",
+        "value" : "%82SNAPPY%00%00%00%00%01%00%00%00%01%00%00%0d%b6%f37%f0O%ac%ed%00%05sr%00!org.apache.beam.sdk.util.DoFnInfo%11%8ed%e2%c7+%87%1b%02%00%06J%00%0amainOutputL%00%04doFnt%00%25Lorg/%09D%00/%01D</sdk/transforms/%01JH;L%00%0ainputCodert%00%22LoJ5%00%00c%01%1d%04s/%05$%14;L%00%09ou%01j,Mapt%00%0fLjava/%01%9b0/Map;L%00%0esideI%01T%1cViewst%00%14%09#%90lang/Iterable;L%00%11windowingStrategyt%00.R%7f%00%1cvalues/W>0%00%0c;xp%00%09%01%10%06sr%005N3%014io.WriteFiles$%05%0bpShardedBundles}%d6_e%85%82I%fc%02%00%02L%00%15s%01%1cHNumberAssignmentt%003R%97%00%08io/%05Q%09%5c%05W%1950;L%00%06this$0t%00#%86?%00%10;xr%00#N%c1%009%b0%25%fa@%acD#%06%ce%93%bd%9d%02%00%00xp~r%001N4%006%f5%00:%99%00)1 %00%00%12%00%00xr%00%0e!%be%00.!%9b%10.Enum.%1d%00Xpt%00%13ASSIGN_WHEN_WRITING^%9d%022u%00L%92%c3%9c%c9%fd%e0%8e%c3%02%00%07I%00%16maxNum%25,%10rsPer){%08Z%00%0eI%02%04ed%05%1b4sL%00%10computeNum%05%b6%0cst%00+R<%019%16%08/PTQ%d2AT%00n%11:%10ProviE%d3VB%00 options/VA%5c%11-a%0eU%be%0cst%00%10I%baE%dd%08Lis!%d5%1c%04sinkt%00&R%97%00%08io/A%0d BasedSinka%0e%00wA%7f%10Opera%01q%08t%005%92:%00I%ab%157A%1f%00)N%eb%019%09%00.9%09 +%16Uq%88%89f%c7%03A%25(x%00%00%00%14%01psr%00=NA%00-%08%00.2%08%01%18$Static2%14%004%9c%e2%e1%8f%09%d9W%b0%02%00%01L%00%05e%93%08t%00%12)!A@ /Object;x%01k%00%11YWHInteger%12%e2%a0%a4%f7%81%878%02%00%01I%0d?%0cxr%00%10%19(iv%1c%86%ac%95%1d%0b%94%e0%8bE%e0%1c%00%00%00%01sr%00UN%b8%00Prepackaged.com.google%01%0b@mon.collect.Immut%81o!%bd4$SerializedForU%eb %02%00%01[%00%08elea%eb%10st%00%13[N%d4%00%04ur%11%19i-%0d%ed%1c%90%ceX%9f%10s)l%11%af%10%00sr%00%1fN%af%00%18io.TextA%15%1c%805%1d%f2%e9%1a%89{%85r%10%06foot%a1y.J%01%14String%81B8headerq%00~%00$xr%00$ZZ%002t%02h%5c%a06Hi%80%a1@%02%00%03L%00%13dynamicDestinE%82%0cst%00:%96%83%02%00DF<%00@;L%00%15tempDirectoryq:%01%a3%0c%12L%00%1aA%ee!q0ByteChannelFa%05*%08t%00A%96w%00%81%0dVC%00I%5c%00EZ%06%01%0d%af!%0d.%ef%00 $Constant%01%19DnamePolicy%c4%e2%1cH%c4%e9f%af%25%86%0c%0efil%1d%1c%a2%a5%036S%00a%ee%e1Z%14atFuncn%ee%03y%b6%00/Q%95%01%f2%117a%ee%008Z%e6%00%01s%95`N%a3%01%1ccC%05@^_%1f%f9e%a8%00%11%95%ce(Accessort%00L%96%87%01-O2K%01%00S%f1%da%11N%08;xpa%ef%003.%83%030loud.teleportA%f9%e9%b8%04ed%01%bb9%814%0d%0fN%f6a#%96S%02%00%04L%00%0f%16R%08UW%08q%00~AO%00%14%09%17%159%14refixq%09%1c%00%0d%e5%ac%1cTemplate%0d%15%0c%06suf%11#%0cxr%003%92E%01%15_E%19%1cmsId%b0%b5%11*e%d3%0csr%00>ND%00V6%05%18Runtime27%05P%b4%fa%ab@u%f5%e5%81%02%00%05L%00%0cdefault%05%22%01%b3,%19L%00%05klasst%00%11%9dw%00C%01%13%c1%8d methodNam%05.%00$%0e{%09%c9%b8%04Id%d5%9e%a5}%04Lo%851 %0cproperty%153%18xppvr%008f%a1%01a%cf!B$s.PubsubTo%81%a9%04$O%09h%1e%11%08%00%00%c1K%14t%00%12get%16g%0a5%ab%00s2E%08%05%88(%8b%e4%90%cc%8f#%df%02%00%01J%b1%eb%01%ed%00%1c%01F%01%01%00tB%f0%01%00s%01 %0c2t%00%06)%f1%01%0e%0c7t%00%17%15n5%a3U%02%04:tV%1e%02%11J<%0cW-P-SS-of-NNq%00~%01P%00%16%15P%12^%08.<%02%0c:t%00%13%09|2%1b%00%11N%00%00%0dBF%92%00%00SUqF%92%00%09%1c^z%07%99%05%00.N%05%04Ds$Identity%1bn%f7C9'S%d0Q%92%aa%c8%07%14NestedEo%b1%aa%1c%bb%13Y~K%e2%a8S%85%f9%00%0a%05%85%0clato%a5%c2%00+%f1%da%01%ef%00%12%e5%ca^V%0b!%92%99%88%14ExtracY%15%1c!=%0f%109%18%f6%a6%09%b3%01N%00J%0e8%0a%f9%ee%14invoke%15%f9hedLambdaoa%d0%94,)6%85%02%00%0aI%00%0eimplMe%02DKind[%00%0ccapturedArg%05U%0c%1fL%00%0e%09%14%08inge5%01k%143L%00%18fu%a9%82(alInterface%15 %0c$L%00%1dJ %00%09ju9%08L%00%22b%25%00%10Signa%01%8a%01oa%96%01%aa.`%00%1d%bb%1dQ%00%13%01'%09g>B%00%04%16i%c9%a5%10iated%09#%08Typ%09`%12%e6%0c%04%06u%01l%00!a?%0cvr%000%be%d0%03%018%0d%01%0e%d9%0b%a1%19%00/j%1b%0eN%91%02,t%00%05applyt%00&(%9d%ac%1a%0a%09%00)F%13%00%00t%05%a7%00/%16%9b%09%00/%c5%18%00/%d1%18%00/%95w%00/.w%04%0ct%00%15lE%09D$run$9642cd19$1t%00:.t%00%00S%16!%09%00)^%ca%064fs/ResourceId;!9%00Y%01%05%105~r%004N%cf%05%04io:%d0%02(Compression!%87-:%124%0d%01I<%0dt%00%0cUNCOMPRESSED%e5%05%002ZZ%00%a1O%0e%f8%09%00$%01%09%0e%dd%08&%d7%0b%1c{yA%de%c0%87%ba+e%8c%1a%0b%0a%01`%08$L%00:%fb%09!%b1B%10%10B%b7%006^%00,Bq%a8%22%d0%a8L%d4%02%00%03ZFl%0d%00%04%0e%c9%0c%01m%0c%14L%00%0d!%8e%00D%1e%d4%09%01%15%0c%12xp%01%01%08%00(eRa%bd%00MZ%df%006%09%046%82%00%00$%a1c%10orary%15]8Builder%15%9fW%8b%96op%ae%09%fa%01%7f%04Id%01p%0c4L%00%09%e1D%10stamp%01%11%04$x%05%07%a1%a0H2018-03-02_21-29-21%01%22%00K%25~%00%22N%9f%00%00c%12%b8%10%08.Kv%12%ba%10%1cj%00%bd%b9%1d%a3%ca6%05t%0c%08key%05%16%01C%0c%02L%00%0a%12%d2%0c%19%12%0cxr%00*jS%00%10Struc%81%02%00d%053%1cs%bf%12%0e%d5%d46%11%81%f0%08r%00 j9%00%05/%1cC%dd%d5%89%ae%bc~%f8%01/%0ed%08rj%00%00h%12%af%10%00K%0d%af%1c=|Z%106%008%ccR%c5%00%00%10%12%14%09%16J%0d%05i%08t%00(R$%03)%19%14/VarIn%16%fb%11%00;E%d9%10esr%00&j%be%00%1d1%1c%c0K2%da%a9KVh%01%c4v5%00%14Atomic%05%90%1c%c7%ec%b5%cc%85tPF%015!y%85%e1%10msr%00(ju%00%1e4%12%05B%18%c5,X'%1a%05O-j%00,%8a7%00%08Lik%09;%1c%b63%8d%9f%0c%e5Y%f4%25;%00%0c%1a%f2%0d%05U%01%8b%10%02L%00%0ci%1a%9e%12%b5%b4%09%a5%00s%82%0c%02%18ingUtf8%05M%1cL%0d}%1d%cb%01%cd%a4%11%e4%0clt%00%08%11%c3%0csr%00c>%b3%00<runners.dataflow%ba%db%0e%10BiMapb%dc%0e%0e%e4%11%00a%fer%00:r%00np%00%14%02[%00%04ke%16%d0%09%0c%1f[%00%06eV%85D%08%1fxp%d5%c3%00%01%05%12%009%adW%d9%db%0e%ee%0fR%06%13%09Gd.TupleTag%b3%18yf[%c0z%b5%02%00%02Z%00%09gen%0e^%11%14edL%00%02i%85F%e132M%0a%08 srV,%02%0dY%16%a3%0c*%8b%14H%a4Mf$.%cc%15%e5%02%00%0bZ%00%18allow%0e%a4%08TtenessSpecifiedZ%00%0dmode%1d%10%00%1a%95%bd%1cCombiner%1d%1d%14%10trigg%1d%13%08L%00%0f:[%00%0ct%00%18L%0e%82%15%10joda/%01L%08/Du%16:%12@;L%00%0fclosingBehavi%0e%cc%0d%00A%05-j%c9%07%16b%13%08ing%1a>%15%04$C6C%00%0c;L%00%04%01%c3%08t%00?RK%00) %0d=%00i&%ab%15%1c$Accumul%12S%10%08Mod%0e%d1%15%18%0eonTime%19%9e%00@RS%00%12s%0a%0e(%0f%00sF%9e%00%00O2B%00%0c;L%00%11!%04%c5%0d1P%08t%00<%a6W%00%01%902>%00%0c;L%00%07-%86%08t%002%aaI%00)%ba%0c;L%00%08)S%04Fn^%17%16j%e0%00%04Fn%16%b3%16A%e8%00%16a%96!%e7%00.%01%e3%00.1%e7%1c%00%00%02?zQ%ce%d6%81>%1aL%12%19%25 base.Base%1d.%10Y%19:%f4%8e%12k%0d%1c%07iMillis%120%0a%05%01%0c~r%00?%01gI!&I%18%19%a3%00.%09%ce%0cing.i%04>!%02%05H%1a/%16%a1'T%0dt%00%11FIRE_IF_NON_EMPTY~Z]%14I>%0dZn>%02%01b%01%01%0e%95%16%0df,%16DISCARDING_%01q D_PANES~rV%92%0fn%d3%006V%02%01h%01%01%1dl%00%0b%01a%14_ALWAY%01a%00:%a24%01B`%02%01Y%01%01%1d]D%0dEND_OF_WINDOWsr%007%a2_%00%00D%16/%10M}%1c%b1%0a%e3%87%d1%bd:sI%1b%000%a2F%00%0d?%1c6M3!y%faA%0f%12%19%12%00%0b%0e%ea%0fI%d4%a5%8c%00%13%12%88%08%00%1f%12%a1%0d%0e%ef%16%04.C%16C%15%0e$%17%14$Empty%0eC%15%1cz%b8%17%b4<%a7%9e%de%01%82%0e%b8%08R%1d%0eR%8a%01%10FixedIb s%04i?%b6%ed%bf;%88%e5%88%14%06offse%12%f2%0f%04~L%0e%95%0a%00z%12%14%08%04~xZS%02R^%00%10Parti%01%ac%08ing%09e$Fnl%9a2%95%8c%90%00%83%01%ac%08r%00;%a2.%01%18NonMerg%1dJ%1cW%06%0bg%d3%ee%a8%ab%09J%001%a2J%00%11%8a%1c%c6%04%19y%ba%8a%96W%01@%12%cd%0a8%88sq%00~%00%86%00%00%00%00%00%04%93%e0"
+      },
+      "non_parallel_inputs" : { },
+      "user_name" : {
+        "@type" : "http://schema.org/Text",
+        "value" : "Write File(s)/WriteFiles/WriteShardedBundles"
+      },
+      "user_fn" : {
+        "@type" : "http://schema.org/Text",
+        "value" : "org.apache.beam.sdk.io.WriteFiles$WriteShardedBundles"
+      },
+      "display_data" : [ {
+        "namespace" : "org.apache.beam.sdk.transforms.ParDo$SingleOutput",
+        "key" : "fn",
+        "type" : "JAVA_CLASS",
+        "value" : "org.apache.beam.sdk.io.WriteFiles$WriteShardedBundles",
+        "shortValue" : "WriteShardedBundles",
+        "label" : "Transform Function"
+      }, {
+        "namespace" : "org.apache.beam.sdk.io.WriteFiles",
+        "key" : "numShards",
+        "type" : "INTEGER",
+        "value" : 1,
+        "label" : "Fixed Number of Shards"
+      }, {
+        "namespace" : "org.apache.beam.sdk.io.WriteFiles",
+        "key" : "sink",
+        "type" : "JAVA_CLASS",
+        "value" : "org.apache.beam.sdk.io.TextSink",
+        "shortValue" : "TextSink",
+        "label" : "WriteFiles Sink"
+      } ],
+      "parallel_input" : {
+        "@type" : "OutputReference",
+        "output_name" : "5",
+        "step_name" : "s5"
+      },
+      "output_info" : [ {
+        "output_name" : {
+          "@type" : "http://schema.org/Text",
+          "value" : "6"
+        },
+        "user_name" : {
+          "@type" : "http://schema.org/Text",
+          "value" : "Write File(s)/WriteFiles/WriteShardedBundles.out0"
+        },
+        "encoding" : {
+          "@type" : "kind:windowed_value",
+          "is_wrapper" : {
+            "@type" : "http://schema.org/Boolean",
+            "value" : true
+          },
+          "component_encodings" : [ {
+            "@type" : "org.apache.beam.sdk.coders.CustomCoder",
+            "type" : {
+              "@type" : "http://schema.org/Text",
+              "value" : "org.apache.beam.sdk.io.FileBasedSink$FileResultCoder"
+            },
+            "serialized_coder" : {
+              "@type" : "http://schema.org/Text",
+              "value" : "%82SNAPPY%00%00%00%00%01%00%00%00%01%00%00%01e%99%04%b0%ac%ed%00%05sr%004org.apache.beam.sdk.io.FileBasedSink$%01%0e%90ResultCoder0%97uv#%22%92%0b%02%00%02L%00%10destinationC%01%1e%1ct%00%22Lorg/%09V%00/%01V%14/sdk/c%01%1d%04s/%05B$;L%00%0bwindow%05%0f q%00~%00%01xr%00*N%8e%00%098(.Structured%0538s%bf%12%0e%d5%d46%11%02%00%00xr%00 j9%00%05/%1cC%dd%d5%89%ae%bc~%f8%01/%10psr%00$j1%00%08Voi%09d%1c%a8~b5%1e%f3l%f7%015%08r%00&j3%00%14Atomic%05j%1c%c7%ec%b5%cc%85tPF%015 q%00~%00%02sr%00(j;%00%1cNullable%05=DE%db%1b6>%90%a7%07%02%00%01L%00%0avalu%09%18%01I%00%01%15O%00KNO%00(transforms.)Z0ing.IntervalW%25l%00$6%0f%00%05r@%c8%051m-{%85D%02%00%00xq%00~%00%02"
+            }
+          }, {
+            "@type" : "kind:interval_window"
+          } ]
+        }
+      } ]
+    }
+  }, {
+    "kind" : "ParallelDo",
+    "name" : "s7",
+    "properties" : {
+      "serialized_fn" : {
+        "@type" : "http://schema.org/Text",
+        "value" : "%82SNAPPY%00%00%00%00%01%00%00%00%01%00%00%08j%82%22%f0O%ac%ed%00%05sr%00!org.apache.beam.sdk.util.DoFnInfo%11%8ed%e2%c7+%87%1b%02%00%06J%00%0amainOutputL%00%04doFnt%00%25Lorg/%09D%00/%01D</sdk/transforms/%01JH;L%00%0ainputCodert%00%22LoJ5%00%00c%01%1d%04s/%05$%14;L%00%09ou%01j,Mapt%00%0fLjava/%01%9b0/Map;L%00%0esideI%01T%1cViewst%00%14%09#%90lang/Iterable;L%00%11windowingStrategyt%00.R%7f%00%1cvalues/W>0%00%0c;xp%00%09%01%10%07sr%00,N3%01%19%ef%90.MapElements$1rO@%86%09P%b93%02%00%01L%00%06this$0t%00,R%7f%00%19D%01%e2%11D%10;xr%00#zs%00!b@%acD#%06%ce%93%bd%9d%02%00%00xpsr%00*z4%00%1d%a7H%8b%c3e?%d4@%aa%d3%02%00%02L%00%02fnt%00/~%a1%000SimpleFunctio!%deT%12fnClassDisplayDatat%00=~G%00%00d%09.%00/%1d6 $ItemSpec%01%f9%00)z%c5%00%04PTQg +%16Uq%88%89f%c7%03%01%ff%08xsr%82;%00DWithKeys$2;%e9%ab%c2%ffo%b4%d16%a4%01%00)~%bc%00%11A%01%a8%00-z%a8%006/%01%1cb%a2%ef%dajq%cet%05q%25p%005~m%00%1cSerializA%d45v%04xp!%e9%00'z|%00%11%a8%1c%a4%8cN_W%b7$a%11v%14q%00~%00%13x%01%06%00%0e%b20%01 1C%ad2I%d9%e4O%c7%05I(%07val$keyt%00%12}%7f%14Object%0d%a1%00Ez%a1%00M%05%14.AutoVa%83%00_]%0f%00_Q%0f40%b5%12S%c4%d1%faQ%02%00%07L%00%03Br%008String;L%00%05label%01%d7$%1bL%00%07linkUr%11%0f0%09namespacet%00%11%1d%afE%ba%81%a3%10short%05%84%01A(%18L%00%04typet%009~%a0%01%0d%c42%c9%02%08Typ%81%80%00%05%85W%05P%0cxr%00;%9a%0d%01=%03u%12%1c%acD %db1?%19%02e%e38t%00%05mapFnt%00%0cMap Q%15 ppt%00%00~r%007%cah%00%01%b1%89%e8 %00%00%12%00%00xr%00%0e%a1u%00.%a1R%10.Enum.%1d%008pt%00%0aJAVA_CLASSt%aap%03%0csr%004N%9e%00@io.FileBasedSink$%01%0e%10Resul%c96%1c0%97uv#%22%92%0b%85%a7%1c%10destina%81%7f%00C%c17!a%0c%02L%00%0b%a9%ee%19%13%04xrV%0b%05%00c%015,s.Structured%053%1cs%bf%12%0e%d5%d46%11!c%08r%00 N%a7%00%0d9%05/%1cC%dd%d5%89%ae%bc~%f8%01/a%8c%00$j1%00%08Voi%09d%1c%a8~b5%1e%f3l%f7%015%08r%00&j3%00%14Atomic%05j%1c%c7%ec%b5%cc%85tPF%015%01%eb%10)sr%00(j;%00%0cNull%81-%05=%1cE%db%1b6>%90%a7%07e%b2%00%0aE%90%05%18%01I%00%02%15O%00KNO%00%d9%95%00.)Z,ing.Interval%e9*%00$6%0f%00%05Z%1c%c8%051m-{%85D.%af%00%00c>`%00%e8runners.dataflow.repackaged.com.google.common.collect.Immut%01%db%14BiMap$%b1%1a%10edForU%a2%01x%08r%00a%fer%00:r%00np%00,%02[%00%04keyst%00%13[%9d[%ad%0a%08[%00%06%25w%00s!s%105xpur%11'i^%0d'%1c%90%ceX%9f%10s)l%01%bf%0et%08%04%01s2%84%03<Long;%8b%e4%90%cc%8f#%df%02%00%01J%8d%5c%0cxr%00%10y%a94Number%86%ac%95%1d%0b%94%e0%8b%11J%01%01%04%07u%01~%087%00%00%05XRU%08%09%a5h.TupleTag%b3%18yf[%c0z%b5%02%00%02Z%00%09gene%0eB%09%14dL%00%02id%01L%18%1bxp%00t%00%06%16%a8%09%0csr%00%1f%05%87%0e%a5%09%04.C)%afTions$EmptyListz%b8%17%b4<%a7%9e%de%05%96^L%09%0d%84I]*%b7%09p%a4Mf$.%cc%15%e5%02%00%0bZ%00%18allowedLateness%0e2%08,ifiedZ%00%0dmode%1d%10D%1atimestampCombiner%1d%1d%14%10trigg%1d%13%08L%00%0f:[%00%08t%00%18%a5%ff%10joda/%01L%0c/Dur%85yT;L%00%0fclosingBehaviort%00A%05-%04ap%0eT%0bR%10%0buH%1aj%0a%04$C6C%00%0c;L%00%04%01%c3%08t%00?RK%00) %0d=%00i&%d7%0a%1c$Accumul%05%9b%08Mod%c1}%18%0eonTime%19%9e%00@RS%00y%e6F%9e%00%00O2B%00%0eQ%0b!%042P%01%08t%00<%a6W%00%01%902>%00%0c;L%00%07-%86%08t%002%aaI%00)%ba%0c;L%00%08)S%e1%0d%003%a6@%00Ia%04Fn%16%df%0bak%00%16%810!%e7%00.%01%e3%00.1%e7%1c%00%00%02?zQ%ce%d6A%b6%08r%00%1f6%25%00 base.Base%1d.%10Y%19:%f4%8ee%a1%1c%07iMillise%ce%05%01%0c~r%00?%01BI!%00.%0e1%0d%12u%0d9%83%bdi%09%a3>!%02%05H%00%00%e9%a4a%86`$t%00%11FIRE_IF_NON_EMPTY~r%00=Nh%00I>%0dZn>%02%01b%01%01%0e%0a%08%0df,%16DISCARDING_%01q(D_PANES~r%00>Nk%00n%d3%006V%02%01h%01%01%1dl%00%0b%01a%14_ALWAY%01a%00:%a2a%00B`%02%01Y%01%01%1d]<%0dEND_OF_WINDOWsr%82/%09Ia%c1%fc%18DefaultM}%1c%b1%0a%e3%87%d1%bd:sI%1b%000%a6%a5%00I%bc%1c6M3!y%faA%0f%e5%99%0c%0bsub%0d%18%0cst%00%10%c9E%a1L%00/%a1;%08;xp!%86%10Asr%005%a2g%00%10FixedIE s%04i?%b6%ed%bf;%88%12?%09%18%06offset%01R%18CL%00%04siz%12%a2%0a%04CxZ6%02R%cb%01%10Parti%a1%e2%08ing%09e$Fnl%9a2%95%8c%90%00%83)%11~%ee%0a9W%18NonMerg%1dJ%1cW%06%0bg%d3%ee%a8%ab%09J%001%a2%f4%00%11%8a%1c%c6%04%19y%ba%8a%96W%01@%25;8Msq%00~%00K%00%00%00%00%00%04%93%e0"
+      },
+      "non_parallel_inputs" : { },
+      "user_name" : {
+        "@type" : "http://schema.org/Text",
+        "value" : "Write File(s)/WriteFiles/WithKeys/AddKeys/Map"
+      },
+      "user_fn" : {
+        "@type" : "http://schema.org/Text",
+        "value" : "org.apache.beam.sdk.transforms.MapElements$1"
+      },
+      "display_data" : [ {
+        "namespace" : "org.apache.beam.sdk.transforms.ParDo$SingleOutput",
+        "key" : "fn",
+        "type" : "JAVA_CLASS",
+        "value" : "org.apache.beam.sdk.transforms.MapElements$1",
+        "shortValue" : "",
+        "label" : "Transform Function"
+      }, {
+        "namespace" : "org.apache.beam.sdk.transforms.MapElements",
+        "key" : "mapFn",
+        "type" : "JAVA_CLASS",
+        "value" : "org.apache.beam.sdk.transforms.WithKeys$2",
+        "shortValue" : "",
+        "label" : "Map Function"
+      } ],
+      "parallel_input" : {
+        "@type" : "OutputReference",
+        "output_name" : "6",
+        "step_name" : "s6"
+      },
+      "output_info" : [ {
+        "output_name" : {
+          "@type" : "http://schema.org/Text",
+          "value" : "7"
+        },
+        "user_name" : {
+          "@type" : "http://schema.org/Text",
+          "value" : "Write File(s)/WriteFiles/WithKeys/AddKeys/Map.out0"
+        },
+        "encoding" : {
+          "@type" : "kind:windowed_value",
+          "is_wrapper" : {
+            "@type" : "http://schema.org/Boolean",
+            "value" : true
+          },
+          "component_encodings" : [ {
+            "@type" : "kind:pair",
+            "is_pair_like" : {
+              "@type" : "http://schema.org/Boolean",
+              "value" : true
+            },
+            "component_encodings" : [ {
+              "@type" : "org.apache.beam.sdk.coders.VoidCoder"
+            }, {
+              "@type" : "org.apache.beam.sdk.coders.CustomCoder",
+              "type" : {
+                "@type" : "http://schema.org/Text",
+                "value" : "org.apache.beam.sdk.io.FileBasedSink$FileResultCoder"
+              },
+              "serialized_coder" : {
+                "@type" : "http://schema.org/Text",
+                "value" : "%82SNAPPY%00%00%00%00%01%00%00%00%01%00%00%01e%99%04%b0%ac%ed%00%05sr%004org.apache.beam.sdk.io.FileBasedSink$%01%0e%90ResultCoder0%97uv#%22%92%0b%02%00%02L%00%10destinationC%01%1e%1ct%00%22Lorg/%09V%00/%01V%14/sdk/c%01%1d%04s/%05B$;L%00%0bwindow%05%0f q%00~%00%01xr%00*N%8e%00%098(.Structured%0538s%bf%12%0e%d5%d46%11%02%00%00xr%00 j9%00%05/%1cC%dd%d5%89%ae%bc~%f8%01/%10psr%00$j1%00%08Voi%09d%1c%a8~b5%1e%f3l%f7%015%08r%00&j3%00%14Atomic%05j%1c%c7%ec%b5%cc%85tPF%015 q%00~%00%02sr%00(j;%00%1cNullable%05=DE%db%1b6>%90%a7%07%02%00%01L%00%0avalu%09%18%01I%00%01%15O%00KNO%00(transforms.)Z0ing.IntervalW%25l%00$6%0f%00%05r@%c8%051m-{%85D%02%00%00xq%00~%00%02"
+              }
+            } ]
+          }, {
+            "@type" : "kind:interval_window"
+          } ]
+        }
+      } ]
+    }
+  }, {
+    "kind" : "Bucket",
+    "name" : "s8",
+    "properties" : {
+      "serialized_fn" : {
+        "@type" : "http://schema.org/Text",
+        "value" : "%0aB%22@%0a%13IntervalWindowCoder%12)%0a'%0a%25%0a#urn:beam:coders:interval_window:0.1j%f8%02%0a%c9%02%0a%c6%02%0a%1durn:beam:windowfn:javasdk:0.1%1a%a4%02%82SNAPPY%00%00%00%00%01%00%00%00%01%00%00%01%10%b9%03%f0L%ac%ed%00%05sr%00)org.apache.beam.sdk.util.IdentityWindowFn%e7%97%89%dd/%a8%86W%02%00%01L%00%05codert%00%22Lorg/a%05@%00/%01@%10/sdk/%05%1d,s/Coder;xr%00;Ne%000transforms.wi%01c4ing.NonMerging%11w8W%06%0bg%d3%ee%a8%ab%02%00%00xr%001%a2J%00%11@%1c%c6%04%19y%ba%8a%96W%01@%10psr%00K%a2B%00%1cInterval%09J%00$6%0f%000Coder%c8%051m-{%85D%01%5c%08r%00*NZ%00)%0b(.Structured%059%1cs%bf%12%0e%d5%d46%11%099%00 j9%00%05/0C%dd%d5%89%ae%bc~%f8%02%00%00xp%1a%13IntervalWindowCoder%22%02b%00(%010%018%02@%f7%a7%8d%af%ba%93%b1%10H%01P%01"
+      },
+      "user_name" : {
+        "@type" : "http://schema.org/Text",
+        "value" : "Write File(s)/WriteFiles/Reshuffle/Window.Into()/Window.Assign"
+      },
+      "display_data" : [ {
+        "namespace" : "org.apache.beam.sdk.transforms.windowing.Window$Assign",
+        "key" : "trigger",
+        "type" : "STRING",
+        "value" : "ReshuffleTrigger()",
+        "label" : "Trigger"
+      }, {
+        "namespace" : "org.apache.beam.sdk.transforms.windowing.Window$Assign",
+        "key" : "windowFn",
+        "type" : "JAVA_CLASS",
+        "value" : "org.apache.beam.sdk.util.IdentityWindowFn",
+        "shortValue" : "IdentityWindowFn",
+        "label" : "Windowing Function"
+      }, {
+        "namespace" : "org.apache.beam.sdk.transforms.windowing.Window$Assign",
+        "key" : "accumulationMode",
+        "type" : "STRING",
+        "value" : "DISCARDING_FIRED_PANES",
+        "label" : "Accumulation Mode"
+      } ],
+      "parallel_input" : {
+        "@type" : "OutputReference",
+        "output_name" : "7",
+        "step_name" : "s7"
+      },
+      "output_info" : [ {
+        "output_name" : {
+          "@type" : "http://schema.org/Text",
+          "value" : "8"
+        },
+        "user_name" : {
+          "@type" : "http://schema.org/Text",
+          "value" : "Write File(s)/WriteFiles/Reshuffle/Window.Into()/Window.Assign.out0"
+        },
+        "encoding" : {
+          "@type" : "kind:windowed_value",
+          "is_wrapper" : {
+            "@type" : "http://schema.org/Boolean",
+            "value" : true
+          },
+          "component_encodings" : [ {
+            "@type" : "kind:pair",
+            "is_pair_like" : {
+              "@type" : "http://schema.org/Boolean",
+              "value" : true
+            },
+            "component_encodings" : [ {
+              "@type" : "org.apache.beam.sdk.coders.VoidCoder"
+            }, {
+              "@type" : "org.apache.beam.sdk.coders.CustomCoder",
+              "type" : {
+                "@type" : "http://schema.org/Text",
+                "value" : "org.apache.beam.sdk.io.FileBasedSink$FileResultCoder"
+              },
+              "serialized_coder" : {
+                "@type" : "http://schema.org/Text",
+                "value" : "%82SNAPPY%00%00%00%00%01%00%00%00%01%00%00%01e%99%04%b0%ac%ed%00%05sr%004org.apache.beam.sdk.io.FileBasedSink$%01%0e%90ResultCoder0%97uv#%22%92%0b%02%00%02L%00%10destinationC%01%1e%1ct%00%22Lorg/%09V%00/%01V%14/sdk/c%01%1d%04s/%05B$;L%00%0bwindow%05%0f q%00~%00%01xr%00*N%8e%00%098(.Structured%0538s%bf%12%0e%d5%d46%11%02%00%00xr%00 j9%00%05/%1cC%dd%d5%89%ae%bc~%f8%01/%10psr%00$j1%00%08Voi%09d%1c%a8~b5%1e%f3l%f7%015%08r%00&j3%00%14Atomic%05j%1c%c7%ec%b5%cc%85tPF%015 q%00~%00%02sr%00(j;%00%1cNullable%05=DE%db%1b6>%90%a7%07%02%00%01L%00%0avalu%09%18%01I%00%01%15O%00KNO%00(transforms.)Z0ing.IntervalW%25l%00$6%0f%00%05r@%c8%051m-{%85D%02%00%00xq%00~%00%02"
+              }
+            } ]
+          }, {
+            "@type" : "kind:interval_window"
+          } ]
+        }
+      } ]
+    }
+  }, {
+    "kind" : "GroupByKey",
+    "name" : "s9",
+    "properties" : {
+      "serialized_fn" : {
+        "@type" : "http://schema.org/Text",
+        "value" : "%0aB%22@%0a%13IntervalWindowCoder%12)%0a'%0a%25%0a#urn:beam:coders:interval_window:0.1j%f8%02%0a%c9%02%0a%c6%02%0a%1durn:beam:windowfn:javasdk:0.1%1a%a4%02%82SNAPPY%00%00%00%00%01%00%00%00%01%00%00%01%10%b9%03%f0L%ac%ed%00%05sr%00)org.apache.beam.sdk.util.IdentityWindowFn%e7%97%89%dd/%a8%86W%02%00%01L%00%05codert%00%22Lorg/a%05@%00/%01@%10/sdk/%05%1d,s/Coder;xr%00;Ne%000transforms.wi%01c4ing.NonMerging%11w8W%06%0bg%d3%ee%a8%ab%02%00%00xr%001%a2J%00%11@%1c%c6%04%19y%ba%8a%96W%01@%10psr%00K%a2B%00%1cInterval%09J%00$6%0f%000Coder%c8%051m-{%85D%01%5c%08r%00*NZ%00)%0b(.Structured%059%1cs%bf%12%0e%d5%d46%11%099%00 j9%00%05/0C%dd%d5%89%ae%bc~%f8%02%00%00xp%1a%13IntervalWindowCoder%22%02b%00(%010%018%02@%f7%a7%8d%af%ba%93%b1%10H%01P%01"
+      },
+      "user_name" : {
+        "@type" : "http://schema.org/Text",
+        "value" : "Write File(s)/WriteFiles/Reshuffle/GroupByKey"
+      },
+      "display_data" : [ ],
+      "parallel_input" : {
+        "@type" : "OutputReference",
+        "output_name" : "8",
+        "step_name" : "s8"
+      },
+      "disallow_combiner_lifting" : {
+        "@type" : "http://schema.org/Boolean",
+        "value" : true
+      },
+      "output_info" : [ {
+        "output_name" : {
+          "@type" : "http://schema.org/Text",
+          "value" : "9"
+        },
+        "user_name" : {
+          "@type" : "http://schema.org/Text",
+          "value" : "Write File(s)/WriteFiles/Reshuffle/GroupByKey.out0"
+        },
+        "encoding" : {
+          "@type" : "kind:windowed_value",
+          "is_wrapper" : {
+            "@type" : "http://schema.org/Boolean",
+            "value" : true
+          },
+          "component_encodings" : [ {
+            "@type" : "kind:pair",
+            "is_pair_like" : {
+              "@type" : "http://schema.org/Boolean",
+              "value" : true
+            },
+            "component_encodings" : [ {
+              "@type" : "org.apache.beam.sdk.coders.VoidCoder"
+            }, {
+              "@type" : "kind:stream",
+              "is_stream_like" : {
+                "@type" : "http://schema.org/Boolean",
+                "value" : true
+              },
+              "component_encodings" : [ {
+                "@type" : "org.apache.beam.sdk.coders.CustomCoder",
+                "type" : {
+                  "@type" : "http://schema.org/Text",
+                  "value" : "org.apache.beam.sdk.io.FileBasedSink$FileResultCoder"
+                },
+                "serialized_coder" : {
+                  "@type" : "http://schema.org/Text",
+                  "value" : "%82SNAPPY%00%00%00%00%01%00%00%00%01%00%00%01e%99%04%b0%ac%ed%00%05sr%004org.apache.beam.sdk.io.FileBasedSink$%01%0e%90ResultCoder0%97uv#%22%92%0b%02%00%02L%00%10destinationC%01%1e%1ct%00%22Lorg/%09V%00/%01V%14/sdk/c%01%1d%04s/%05B$;L%00%0bwindow%05%0f q%00~%00%01xr%00*N%8e%00%098(.Structured%0538s%bf%12%0e%d5%d46%11%02%00%00xr%00 j9%00%05/%1cC%dd%d5%89%ae%bc~%f8%01/%10psr%00$j1%00%08Voi%09d%1c%a8~b5%1e%f3l%f7%015%08r%00&j3%00%14Atomic%05j%1c%c7%ec%b5%cc%85tPF%015 q%00~%00%02sr%00(j;%00%1cNullable%05=DE%db%1b6>%90%a7%07%02%00%01L%00%0avalu%09%18%01I%00%01%15O%00KNO%00(transforms.)Z0ing.IntervalW%25l%00$6%0f%00%05r@%c8%051m-{%85D%02%00%00xq%00~%00%02"
+                }
+              } ]
+            } ]
+          }, {
+            "@type" : "kind:interval_window"
+          } ]
+        }
+      } ],
+      "is_merging_window_fn" : {
+        "@type" : "http://schema.org/Boolean",
+        "value" : false
+      }
+    }
+  }, {
+    "kind" : "ParallelDo",
+    "name" : "s10",
+    "properties" : {
+      "serialized_fn" : {
+        "@type" : "http://schema.org/Text",
+        "value" : "%82SNAPPY%00%00%00%00%01%00%00%00%01%00%00%07e%83%1d%f0O%ac%ed%00%05sr%00!org.apache.beam.sdk.util.DoFnInfo%11%8ed%e2%c7+%87%1b%02%00%06J%00%0amainOutputL%00%04doFnt%00%25Lorg/%09D%00/%01D</sdk/transforms/%01JH;L%00%0ainputCodert%00%22LoJ5%00%00c%01%1d%04s/%05$%14;L%00%09ou%01j,Mapt%00%0fLjava/%01%9b0/Map;L%00%0esideI%01T%1cViewst%00%14%09#%90lang/Iterable;L%00%11windowingStrategyt%00.R%7f%00%1cvalues/W>0%00%0c;xp%00%09%01%10%0asr%00T>3%01%a8runners.dataflow.ReshuffleOverrideFactory$R%11%19%a0WithOnlyTrigger$1%e0%c5%12U%b3w%09%c7%02%00%01L%00%06this$0t%00TL>&%01%0dl%00/%11l%00/%c2l%00%10;xr%00#>%c3%00!%f69%b2%25%fc@%acD#%06%ce%93%bd%9d%02%00%00xpsr%00R>4%00%0d%8b%ea%f7%00%1c%cb%93UlR%0cH%7f%01c%08r%00)>a%00:%95%00%04PTQS +%16Uq%88%89f%c7%03%01%9b%10xsr%00%22N;%00IM%08.KvEO@j%00%bd%b9%1d%a3%ca6%02%00%02L%00%08key%05%16%08q%00~%01%10%00%0a%25%fa%19%12%0cxr%00*jS%00$Structured%053%1cs%bf%12%0e%d5%d46%11%09%c7%00 j9%00%05/%1cC%dd%d5%89%ae%bc~%f8%01/!Y%00$j1%00%08Voi%09d%1c%a8~b5%1e%f3l%f7%015%08r%00&j3%00%14Atomic%05j%1c%c7%ec%b5%cc%85tPF%015%01%ea%10%0fsr%00(j;%00q5%05=%18%c5,X'%1a%05O%0d%d6%00,%8a7%00%08Lik%09;%1c%b63%8d%9f%0c%e5Y%f4%25l%18%0celemeni%f9%01%86%10%02L%00%0cim%9f%18Namet%00%12}%b9%18String;%15%b0%004Ny%00@io.FileBasedSink$%01%0e%10Resul%09g%1c0%97uv#%22%92%0b%05%81,%10destination%05%da%0d%85%00%0b%89%18%19%13%09t%01%1e%00%14z)%01%0cNull%81^%05<%1cE%db%1b6>%90%a7%07e%bbBJ%02%01O!x%00KN%c8%00}s%09%8d,ing.Interval%89%87%00$6%0f%00%05r%1c%c8%051m-{%85D5%d8%08t%00%081%bc%0csr%00c>k%00B%aa%03Prepackaged.com.google%01%0b@mon.collect.Immut%01%e6LBiMap$SerializedForm%a9%0f%04%00%00%01%83%08r%00a%fer%00:r%00np%00,%02[%00%04keyst%00%13[]8$Object;[%00%06e%cc%00s!x%10%22xpur%11'%00.%c1%18%00.%0d'%1c%90%ceX%9f%10s)l%01%bf%a1%dc%10%01sr%00%0e%c1a%09&DLong;%8b%e4%90%cc%8f#%df%02%00%01J%00%05%05U%0cxr%00%10%19%254Number%86%ac%95%1d%0b%94%e0%8b%11J%01%01%04%0au%01~%08$%00%00%05XRm%05%05Pls.TupleTag%b3%18yf[%c0z%b5%02%00%02Z%00%09gene%c1%aa%14dL%00%02id%01L %17xp%00t%00%06ou%e1%10%0csr%00%1f%05%87%e1%0d%04.C)%afTions$EmptyListz%b8%17%b4<%a7%9e%de%05%96%04srV%bf%03%0d%84Ih%fd%1f%b0%a4Mf$.%cc%15%e5%02%00%0bZ%00%18allowedLatenessSpecifiedZ%00%0dmode%1d%10D%1atimestampCombiner%1d%1d%04%10t%c9%eb%15%13%08L%00%0f:[%00%08t%00%18%e5%97%10joda/%01L%0c/Dure%b7T;L%00%0fclosingBehaviort%00A%05-jx%08uS%ed%d2%04$C6C%00%0c;L%00%04%01%c3%08t%00?RK%00) %0d=%00i&?%08%1c$Accumul%05%9b%08Mod%0ee%08%18%0eonTime%19%9e%00@RS%00y%f1F%9e%00%00O2B%00%0e%b9%08!%042P%01%08t%00<%a6W%00%01%902>%00%0c;L%00%07-%86%08t%002%aaI%00)%ba%0c;L%00%08)S%10Fnt%003%a6@%00Ia%04Fn%16G%09ak%00%16%810!%e7%00.%01%e3%00.1%e7%1c%00%00%02?zQ%ce%d6A%b6%08r%00%1f6%25%00%10base.%a1%f2%1d.%10Y%19:%f4%8ee%a1%1c%07iMillise%ce%05%01%0c~r%00?%01BI!%04.b%1e%dd%0a9%83%bdt%09%a3>!%02%05H%1c%00%00%00%12%00%00xr. %04%08Enu%b5%02%01%1d`pt%00%11FIRE_IF_NON_EMPTY~r%00=N%81%00IW%0dsnW%02%01{%01%01%01b%81%058<t%00%16DISCARDING_%01q(D_PANES~r%00>Nk%00n%ec%006o%02%01h%01%01%1dl%00%0b%01a%14_ALWAY%01a%00:%a2a%00By%02%01Y%01%01%1d]D%0dEND_OF_WINDOWsr%007%a2_%00%18DefaultM%96%1c%b1%0a%e3%87%d1%bd:sI4%000%a2F%00%0d?%1c6M3!y%faA%0f%e5%bd%0c%0bsub%0d%18%0cst%00%10%c9^%a1e%00/%a1T%08;xp!%86%10.sr%005%a2g%00%10FixedI^ s%04i?%b6%ed%bf;%88%12%96%08%18%06offset%01R%1c0L%00%04size%05%0c%00xZ6%02R%cb%01%10Parti%a1%fb%08ing%09e$Fnl%9a2%95%8c%90%00%83)%11%00;%a2%aa%00%18NonMerg%1dJ%1cW%06%0bg%d3%ee%a8%ab%09J%001%a2J%00%11%8a%1c%c6%04%19y%ba%8a%96W%01@%25;8:sq%00~%008%00%00%00%00%00%04%93%e0"
+      },
+      "non_parallel_inputs" : { },
+      "user_name" : {
+        "@type" : "http://schema.org/Text",
+        "value" : "Write File(s)/WriteFiles/Reshuffle/ExpandIterable"
+      },
+      "user_fn" : {
+        "@type" : "http://schema.org/Text",
+        "value" : "org.apache.beam.runners.dataflow.ReshuffleOverrideFactory$ReshuffleWithOnlyTrigger$1"
+      },
+      "display_data" : [ {
+        "namespace" : "org.apache.beam.sdk.transforms.ParDo$SingleOutput",
+        "key" : "fn",
+        "type" : "JAVA_CLASS",
+        "value" : "org.apache.beam.runners.dataflow.ReshuffleOverrideFactory$ReshuffleWithOnlyTrigger$1",
+        "shortValue" : "",
+        "label" : "Transform Function"
+      } ],
+      "parallel_input" : {
+        "@type" : "OutputReference",
+        "output_name" : "9",
+        "step_name" : "s9"
+      },
+      "output_info" : [ {
+        "output_name" : {
+          "@type" : "http://schema.org/Text",
+          "value" : "10"
+        },
+        "user_name" : {
+          "@type" : "http://schema.org/Text",
+          "value" : "Write File(s)/WriteFiles/Reshuffle/ExpandIterable.out0"
+        },
+        "encoding" : {
+          "@type" : "kind:windowed_value",
+          "is_wrapper" : {
+            "@type" : "http://schema.org/Boolean",
+            "value" : true
+          },
+          "component_encodings" : [ {
+            "@type" : "kind:pair",
+            "is_pair_like" : {
+              "@type" : "http://schema.org/Boolean",
+              "value" : true
+            },
+            "component_encodings" : [ {
+              "@type" : "org.apache.beam.sdk.coders.VoidCoder"
+            }, {
+              "@type" : "org.apache.beam.sdk.coders.CustomCoder",
+              "type" : {
+                "@type" : "http://schema.org/Text",
+                "value" : "org.apache.beam.sdk.io.FileBasedSink$FileResultCoder"
+              },
+              "serialized_coder" : {
+                "@type" : "http://schema.org/Text",
+                "value" : "%82SNAPPY%00%00%00%00%01%00%00%00%01%00%00%01e%99%04%b0%ac%ed%00%05sr%004org.apache.beam.sdk.io.FileBasedSink$%01%0e%90ResultCoder0%97uv#%22%92%0b%02%00%02L%00%10destinationC%01%1e%1ct%00%22Lorg/%09V%00/%01V%14/sdk/c%01%1d%04s/%05B$;L%00%0bwindow%05%0f q%00~%00%01xr%00*N%8e%00%098(.Structured%0538s%bf%12%0e%d5%d46%11%02%00%00xr%00 j9%00%05/%1cC%dd%d5%89%ae%bc~%f8%01/%10psr%00$j1%00%08Voi%09d%1c%a8~b5%1e%f3l%f7%015%08r%00&j3%00%14Atomic%05j%1c%c7%ec%b5%cc%85tPF%015 q%00~%00%02sr%00(j;%00%1cNullable%05=DE%db%1b6>%90%a7%07%02%00%01L%00%0avalu%09%18%01I%00%01%15O%00KNO%00(transforms.)Z0ing.IntervalW%25l%00$6%0f%00%05r@%c8%051m-{%85D%02%00%00xq%00~%00%02"
+              }
+            } ]
+          }, {
+            "@type" : "kind:interval_window"
+          } ]
+        }
+      } ]
+    }
+  }, {
+    "kind" : "ParallelDo",
+    "name" : "s11",
+    "properties" : {
+      "serialized_fn" : {
+        "@type" : "http://schema.org/Text",
+        "value" : "%82SNAPPY%00%00%00%00%01%00%00%00%01%00%00%08t%84%22%f0O%ac%ed%00%05sr%00!org.apache.beam.sdk.util.DoFnInfo%11%8ed%e2%c7+%87%1b%02%00%06J%00%0amainOutputL%00%04doFnt%00%25Lorg/%09D%00/%01D</sdk/transforms/%01JH;L%00%0ainputCodert%00%22LoJ5%00%00c%01%1d%04s/%05$%14;L%00%09ou%01j,Mapt%00%0fLjava/%01%9b0/Map;L%00%0esideI%01T%1cViewst%00%14%09#%90lang/Iterable;L%00%11windowingStrategyt%00.R%7f%00%1cvalues/W>0%00%0c;xp%00%09%01%10%0bsr%00,N3%01%19%ef%90.MapElements$1rO@%86%09P%b93%02%00%01L%00%06this$0t%00,R%7f%00%19D%01%e2%11D%10;xr%00#zs%00!b@%acD#%06%ce%93%bd%9d%02%00%00xpsr%00*z4%00%1d%a7H%8b%c3e?%d4@%aa%d3%02%00%02L%00%02fnt%00/~%a1%000SimpleFunctio!%deT%12fnClassDisplayDatat%00=~G%00%00d%09.%00/%1d6 $ItemSpec%01%f9%00)z%c5%00%04PTQg +%16Uq%88%89f%c7%03%01%ff%10xsr%00'z;%00%00V%25%ed$$1^D%17%1f%a6%97%f7%fe6%a2%01%00'~%ba%00%09?%01%a4%00-zi%006+%01%1cb%a2%ef%dajq%cet%05o%25l%005~k%00%1cSerializA%d05r%04xp!%e5%00%25z|%00%09%a6%1c%cf%b7i%94%abEA%08A%1b%10q%00~%00%0e! %00Ez;%00-%9b%10.Auto%05G%00_=%a5%00_1%a5L0%b5%12S%c4%d1%faQ%02%00%07L%00%03keyt%00%12}%878String;L%00%05label%01}$%18L%00%07linkUr%11%0f0%09namespacet%00%11%1d=EP%819%10short%05%846^%00@Object;L%00%04typet%009~J%01%0d%d42o%02%08Typ%81&%00%05e%fd%01%a1%10%1axr%00;%9a%1d%01=%13U%b8%1c%acD %db1?%19%02!n<pt%00%05mapFnt%00%0cMap 1%bf ppt%00%00~r%007%cah%00%01%b1%89%8e %00%00%12%00%00xr%00%0e%a1%1b%00.%81%f8%10.Enum.%1d%008pt%00%0aJAVA_CLASSt%a2%16%03%0csr%00%22N%9c%00%a9%a2%0c.KvC%a1%ab%1cj%00%bd%b9%1d%a3%ca6%859%0c%08key%05%16!E%0c%02L%00%0a%25R%19%12%04xrV%94%04%0dS$Structured%053%1cs%bf%12%0e%d5%d46%11!F%08r%00 j%8c%00%05/%1cC%dd%d5%89%ae%bc~%f8%01/a%19%00$j1%00%08Voi%09d%1c%a8~b5%1e%f3l%f7%015%08r%00&j3%00%14Atomic%05j%1c%c7%ec%b5%cc%85tPF%015%01%ea%10'sr%004N;%00@io.FileBasedSink$%01%0e%10Resul%e9%05%1c0%97uv#%22%92%0b%25=%1c%10destina%a1N%05g%01[%0c%02L%00%0b%c9%bd%19%13%09t%01%1e%10,sr%00(Ny%00%00c!%9b%14s.Null%813%05<%1cE%db%1b6>%90%a7%07%85wB%9a%01%01O%01%c8%00KNO%00%d9%97%00.%09%8d,ing.Interval%e9,%00$6%0f%00%05r%1c%c8%051m-{%85D.(%01%00c>`%00%e8runners.dataflow.repackaged.com.google.common.collect.Immut%01%db%14BiMap$%b1 %10edForU%fe%01x%08r%00a%fer%00:r%00np%00,%02[%00%04keyst%00%13[%9d%c7%8d%a6%08[%00%06e%11%00s!m%105xpur%11'i%ba%0d'%1c%90%ceX%9f%10s)l%01%bf%0ev%08%04%01s2%e0%03<Long;%8b%e4%90%cc%8f#%df%02%00%01J%8d%b8%0cxr%00%10%99%054Number%86%ac%95%1d%0b%94%e0%8b%11J%01%01%04%0bu%01~%087%00%00%05XRW%08%09%a5h.TupleTag%b3%18yf[%c0z%b5%02%00%02Z%00%09gene%0eD%09%14dL%00%02id%01L%18%18xp%00t%00%06%16%aa%09%0csr%00%1f%05%87%0e%a7%09%04.C)%afTions$EmptyListz%b8%17%b4<%a7%9e%de%05%96^N%09%0d%84I]*%b9%09p%a4Mf$.%cc%15%e5%02%00%0bZ%00%18allowedLateness%0e4%08,ifiedZ%00%0dmode%1d%10D%1atimestampCombiner%1d%1d%14%10trigg%1d%13%08L%00%0f:[%00%08t%00%18%c5[%10joda/%01L%0c/Dure%acT;L%00%0fclosingBehaviort%00A%05-%04ap%0eV%0bR%12%0buH%1al%0a%04$C6C%00%c1%d3%01%c3%08t%00?RK%00) %0d=%00i&%d9%0a%1c$Accumul%05%9b%08Mod%c1%d9%18%0eonTime%19%9e%00@RS%00y%e6F%9e%00%00O2B%00%0eS%0b!%042P%01%08t%00<%a6W%00%01%902>%00%0c;L%00%07-%86%08t%002%aaI%00)%ba%0c;L%00%08)S%e1i%003%a6@%00Ia%04Fn%16%e1%0bak%00%16%810!%e7%00.%01%e3%00.1%e7%1c%00%00%02?zQ%ce%d6A%b6%08r%00%1f6%25%00 base.Base%1d.%10Y%19:%f4%8ee%a1%1c%07iMillise%ce%05%01%0c~r%00?%01BI!%04.b%1ew%0d9%83%bdi%09%a3>!%02%05H%00%00%16%00%08a%86`%22t%00%11FIRE_IF_NON_EMPTY~r%00=Nh%00I>%0dZn>%02%01b%01%01%0ef%08%0df,%16DISCARDING_%01q(D_PANES~r%00>Nk%00n%d3%006V%02%01h%01%01%1dl%00%0b%01a%14_ALWAY%01a%00:%a2a%00B`%02%01Y%01%01%1d]<%0dEND_OF_WINDOWsr%82%8b%09Ia%c1%fc%18DefaultM}%1c%b1%0a%e3%87%d1%bd:sI%1b%000%a6%a5%00I%bc%1c6M3!y%faA%0f%e5%99%0c%0bsub%0d%18%0cst%00%10%c9E%a1L%00/%a1;%08;xp!%86%10Asr%005%a2g%00%10FixedIE s%04i?%b6%ed%bf;%88%12r%08%18%06offset%01R%18CL%00%04siz%12%fe%0a%04CxZ6%02R%cb%01%10Parti%a1%e2%08ing%09e$Fnl%9a2%95%8c%90%00%83)%11~J%0b9W%18NonMerg%1dJ%1cW%06%0bg%d3%ee%a8%ab%09J%001%a2%f4%00%11%8a%1c%c6%04%19y%ba%8a%96W%01@%25;8Msq%00~%00K%00%00%00%00%00%04%93%e0"
+      },
+      "non_parallel_inputs" : { },
+      "user_name" : {
+        "@type" : "http://schema.org/Text",
+        "value" : "Write File(s)/WriteFiles/Values/Values/Map"
+      },
+      "user_fn" : {
+        "@type" : "http://schema.org/Text",
+        "value" : "org.apache.beam.sdk.transforms.MapElements$1"
+      },
+      "display_data" : [ {
+        "namespace" : "org.apache.beam.sdk.transforms.ParDo$SingleOutput",
+        "key" : "fn",
+        "type" : "JAVA_CLASS",
+        "value" : "org.apache.beam.sdk.transforms.MapElements$1",
+        "shortValue" : "",
+        "label" : "Transform Function"
+      }, {
+        "namespace" : "org.apache.beam.sdk.transforms.MapElements",
+        "key" : "mapFn",
+        "type" : "JAVA_CLASS",
+        "value" : "org.apache.beam.sdk.transforms.Values$1",
+        "shortValue" : "",
+        "label" : "Map Function"
+      } ],
+      "parallel_input" : {
+        "@type" : "OutputReference",
+        "output_name" : "10",
+        "step_name" : "s10"
+      },
+      "output_info" : [ {
+        "output_name" : {
+          "@type" : "http://schema.org/Text",
+          "value" : "11"
+        },
+        "user_name" : {
+          "@type" : "http://schema.org/Text",
+          "value" : "Write File(s)/WriteFiles/Values/Values/Map.out0"
+        },
+        "encoding" : {
+          "@type" : "kind:windowed_value",
+          "is_wrapper" : {
+            "@type" : "http://schema.org/Boolean",
+            "value" : true
+          },
+          "component_encodings" : [ {
+            "@type" : "org.apache.beam.sdk.coders.CustomCoder",
+            "type" : {
+              "@type" : "http://schema.org/Text",
+              "value" : "org.apache.beam.sdk.io.FileBasedSink$FileResultCoder"
+            },
+            "serialized_coder" : {
+              "@type" : "http://schema.org/Text",
+              "value" : "%82SNAPPY%00%00%00%00%01%00%00%00%01%00%00%01e%99%04%b0%ac%ed%00%05sr%004org.apache.beam.sdk.io.FileBasedSink$%01%0e%90ResultCoder0%97uv#%22%92%0b%02%00%02L%00%10destinationC%01%1e%1ct%00%22Lorg/%09V%00/%01V%14/sdk/c%01%1d%04s/%05B$;L%00%0bwindow%05%0f q%00~%00%01xr%00*N%8e%00%098(.Structured%0538s%bf%12%0e%d5%d46%11%02%00%00xr%00 j9%00%05/%1cC%dd%d5%89%ae%bc~%f8%01/%10psr%00$j1%00%08Voi%09d%1c%a8~b5%1e%f3l%f7%015%08r%00&j3%00%14Atomic%05j%1c%c7%ec%b5%cc%85tPF%015 q%00~%00%02sr%00(j;%00%1cNullable%05=DE%db%1b6>%90%a7%07%02%00%01L%00%0avalu%09%18%01I%00%01%15O%00KNO%00(transforms.)Z0ing.IntervalW%25l%00$6%0f%00%05r@%c8%051m-{%85D%02%00%00xq%00~%00%02"
+            }
+          }, {
+            "@type" : "kind:interval_window"
+          } ]
+        }
+      } ]
+    }
+  }, {
+    "kind" : "ParallelDo",
+    "name" : "s12",
+    "properties" : {
+      "serialized_fn" : {
+        "@type" : "http://schema.org/Text",
+        "value" : "%82SNAPPY%00%00%00%00%01%00%00%00%01%00%00%0c%a8%c93%f0O%ac%ed%00%05sr%00!org.apache.beam.sdk.util.DoFnInfo%11%8ed%e2%c7+%87%1b%02%00%06J%00%0amainOutputL%00%04doFnt%00%25Lorg/%09D%00/%01D</sdk/transforms/%01JH;L%00%0ainputCodert%00%22LoJ5%00%00c%01%1d%04s/%05$%14;L%00%09ou%01j,Mapt%00%0fLjava/%01%9b0/Map;L%00%0esideI%01T%1cViewst%00%14%09#%90lang/Iterable;L%00%11windowingStrategyt%00.R%7f%00%1cvalues/W>0%00%0c;xp%00%09%01%10%0csr%004N3%01Tio.WriteFiles$Finalize%09J%88edFn%02%c2%1et1UR%95%02%00%04L%00%0efixedNumShardst%00%13.%ba%00%10ntege%01%ff%04%11n%11%22%10Provi%258%00+R%b9%00 options/V%01%c1%11-%0c;L%00%0d%15B!#%08t%00,R>%00%0d%f7%18PCollec%01J%01.!b%00w%01%d3%10Opera%01%16%08t%005R@%00%08io/%01%f7$BasedSink$%25%0a%157%10;xr%00#N4%01Y#EmD%acD#%06%ce%93%bd%9d%02%00%00xppsr%00=N5%00%0d%eb%00.2%eb%00%18$Static2%14%004%9c%e2%e1%8f%09%d9W%b0%02%00%01L%00%05%05%e4%08t%00%12=i%1cObject;x%01k%00%11A]%00.A:%00.-%80,%12%e2%a0%a4%f7%81%878%02%00%01I%0d?%0cxr%00%10%19(4Number%86%ac%95%1d%0b%94%e0%8b%05%b5%0c%00%00%00%01%01N%002N%b9%00%18io.Text%25!%01%096%25%01D{yA%de%c0%87%ba+%02%00%02L%00%06foota&.%af%00`String;L%00%06headerq%00~%00%15xr%003Zm%00n%93%014Bq%a8%22%d0%a8L%d4%02%00%03Z%00%0ei %04ed%05%92(sL%00%04sinkt%00&%92%ed%01Af0tempDirectory%01%98%1c%09xp%01sr%00%1fZ%9b%00%01%ff!%08%1c%805%1d%f2%e9%1a%89{.%f5%00%01?%00%15B%e5%00%00$ZJ%002%e5%00h%5c%a06Hi%80%a1@%02%00%03L%00%13dynamicDestinE%c0%0cst%00:%92%d4%00%04$DF<%00%0c;L%00%152%e8%00qg%01%b1%0c%09L%00%1aa,%81r0ByteChannelFa%25%12%08t%00A%96w%00!%81VC%00I%a6%00EZ%06%01%0d%af!%0d.%ef%00 $Constant%01%19DnamePolicy%c4%e2%1cH%c4%e9f%af%25v%0c%0efil%1d%1c%a2%e3%036S%00%81,%a1%ec%10atFun%85B^I%00y%f4%10/Seri%a1&%01%f2%117%81,%008Z%e6%00%01s%99d%0d%f4.%f0%00%1ccC%05@^_%1f%f9e%f2%00%11%d5%1e(Accessort%00L%96%87%01J[%00%04$S%d1l%11N%00;%89%a4d3com.google.cloud.teleporta%f1%d5%002e%01%1c%0d%0fN%f6a#%96S%c5%0c%00%0f%c9%e46?%03%08L%00%14%09%17%159%1crefixq%00~Ak%04%0ds%c17%1cTemplate%0d%15%0c%06suf%11#%a2%16%04%15_E%19%1cmsId%b0%b5%11*%85%cc%0csr%00>N%89%01V%80%05%18Runtime2%81%05P%b4%fa%ab@u%f5%e5%81%02%00%05L%00%0cdefault%05%22%01%b3,%0fL%00%05klasst%00%11%bd%95%00C%01%13%0e-%08 methodNam%05.%00%15%0e%0d%08%c9%e5%10Idt%00%10%1d2%04Lo%a5%16 %0cproperty%153%18xppvr%008f%a1%01a%cf!B$s.PubsubTo%81%99%04$O%09h%e9%f1%05%01%1cxpt%00%12get%16%f9%085%ab%0csr%00%0e%d9%10%05%88(%8b%e4%90%cc%8f#%df%02%00%01J%d15%01%ed%00%12%05G%0c%00%00%00tB%f0%01%00s%01 %0c't%00%06)%f1%01%0e%0c,t%00%17%15n5%a3U%02%04/tV%1e%02%11J<%0cW-P-SS-of-NNq%00~%01P%00%16%15P%12s%08.<%02%0c/t%00%13%09|2%1b%00%11N%00%00%0dBF%92%00%00SUqF%92%00%09%1c^%c4%07%99%05%00.N%05%04Ds$Identity%1bn%f7C9'S%d0Q%92%aa%12%08%14NestedEo%b1%aa%1c%bb%13Y~K%e2%a8S%85%f9%00%0a%05%85%0clato%a5%c2%00 %1e$%08%01%ef%00%09%12%14%08%005N%ff%02%04io:%88%04%14ExtracY%15%1c!=%0f%109%18%f6%a6%09%b3%01N%00?%0eg%0bY(%14invoke%15%f9hedLambdaoa%d0%94,)6%85%02%00%0aI%00%0eimplMe%02DKind[%00%0ccapturedArg%0e0%0a%00[}%01%1a%c8%08%08L%00%0e%09%25%0cingCaF%01|%14(L%00%18fu%a9%93(alInterface%15 %0c%15L%00%1dJ %00%09{uJ%08L%00%22b%25%00%10Signa%01%9b%01oa%a7%01%bb.`%00%1d%cc%1dQ%00%13%01'%09g>B%00%04%16i%c9%b6%10iated%09#%08Typ%09`%12%89%0b%0c%06ur%00-%02%16%b3%09-%02%1c%90%ceX%9f%10s)l%25{an%0cvr%000%be%ff%03%018%0d%01a%f7%0e^%09%00/j%dc%0cN%c0%02,t%00%05applyt%00&(F%a8%01%00)F%13%00%00t%05%a7%00/%c9G%00/%c5G%00/%d1G%00/%95%a6%00/.%a6%04%0ct%00%15lE8D$run$9642cd19$1t%00:.t%00%00S%165%0a%00)^%f9%064fs/ResourceId;!%c3%00P%01%05%04*~f%e7%0c%81%91%f9%87(Compression!%a5-:%81%f1%00x2%1e%05%0cEnum.%1d%00Dpt%00%0cUNCOMPRESSEDppE%b0a,%00M%92x%03%0e,%09&d%0c%00$%81%d2%14oraryD%1e%88%0a8Builder%15%9fW%8b%96op%aee%f5%00%06!M%04Id%01%e3%0c)L%00%09%c1%b3%10stamp%01%11%04%15x%05%07%a1%0fH2018-03-02_21-29-21%01%22%00@%12%96%0c^%ff%0d6%18%01%01%0e%10Resul%16%f1%0e%1c0%97uv#%22%92%0b%05%86%04%10d&%94%0a%12%eb%0e%01]%0c%02L%00%0b%16%89%0b%19%13%0cxr%00*N%0d%01%00c%12'%0f%14.Struca{%00d%053%1cs%bf%12%0e%d5%d46%11A%ff%08r%00 j9%00%05/%1cC%dd%d5%89%ae%bc~%f8%01/%e1%eeRc%0b%0dj%08Voi%09d%1c%a8~b5%1e%f3l%f7%015%08r%00&jd%00%14Atomic%05j%1c%c7%ec%b5%cc%85tPF%015%01%eb%10Zsr%00(j;%00%0cNull%0e%15%0a%05=%1cE%db%1b6>%90%a7%07%12%d5%09%00%0a%12%c7%0d%05%18%01I%00%02%15O%00KNO%00%a5%e2%0e%97%0a%04s.)Z%04in%16%df%0d%0crval%16%9b%09%00$%a5%13%15%0f%05Z%1c%c8%051m-{%85D.%af%00%00c>`%00lrunners.dataflow.repackaged..s%04%18ommon.c%16Z%0f%10.Immu%16%e2%0b%10iMap$%91=%10edForu%1f%01x%08r%00a%fer%00:r%00np%00%18%02[%00%04keye%82%0cE[%00%06%25f%09%0e%08xpu!j%00G%0e%db%0e%05%12%00.m%c6%00%0c%1d%18Z%e0%0f%09Gd.TupleTag%b3%18yf[%c0z%b5%02%00%02Z%00%09gen%0eW%10%14edL%00%02ie%92%a1%dd%22%08%09%0csr%00U>%02%01%0e%9b%12%b6g%01%0cListbf%01(%01[%00%08element%05%da.%ec%00%10%00sr%00,N%80%00%0d%d4I>*S%12H%a4Mf$.%cc%15%e5%02%00%0bZ%00%18allow%e1%daTtenessSpecifiedZ%00%0dmode%1d%10%00%1a%95%84%1cCombiner%1d%1d%14%10trigg%1d%13%08L%00%0f:[%00%08t%00%18%a5%dc%10joda/%01L%08/Du%16%ae%11@;L%00%0fclosingBehavi%0e%02%0d%00A%05-j%d0%06u)%1a%06%13%04$C6C%00%0c;L%00%04%01%c3%08t%00?RK%00) %0d=%00i&s%13%1c$Accumul%12%89%0f%08Mod%0e%99%13%18%0eonTime%19%9e%00@RS%00y%c7F%9e%00%00O2B%00%0c;L%00%11!%04%a5%d41P%08t%00<%a6W%00%01%902>%00%0c;L%00%07-%86%08t%002%aaI%00)%ba%0c;L%00%08)S%10Fnt%003%a6@%00Ia%04Fn%16{%14%0eM%11%00%16A%8f!%e7%00.%01%e3%00.1%e7%1c%00%00%02?zQ%ce%d6%896%12r%11%19%25 base.Base%1d.%10Y%19:%f4%8e%12%a1%0c%1c%07iMillis%12U%09%05%01%0c~r%00?%01gI!&%11%169%83%bdJ%09%a3>!%02%05H%00%00%16%02%08%81:TRt%00%11FIRE_IF_NON_EMPTY~Z%dd%13I>%0dZn>%02%01b%01%01%08%12%00%00%11f,%16DISCARDING_%01q D_PANES~rV%c8%0en%d3%006V%02%01h%01%01%1dl%00%0b%01a%14_ALWAY%01a%00:%a24%01B`%02%01Y%01%01%1d]D%0dEND_OF_WINDOWsr%007%a2_%00%00D%16e%0fM}%1c%b1%0a%e3%87%d1%bd:sI%1b%000%a2F%00%0d?%1c6M3!y%faA%0f%e5z%00%0b%0e %0fI%d4%00s%22%80%0f%12%8d%17%a1d%16%9f%12%00%1f%12%e5%0c%01%15%00.&K%16%18s$Empty%01&%1cz%b8%17%b4<%a7%9e%de%01%90%0er%08Ra%0dR%98%01%00F%0e0%17Ip s%04i?%b6%ed%bf;%88%12K%09%14%06offse%126%0f%00q%12%b9%14%00z%12(%0c%04qxZa%02R^%00%10Parti%0e%e1%16%08ing%09e$Fnl%9a2%95%8c%90%00%83%01%ac%08r%00;%a2<%01%18NonMerg%1dJ%1cW%06%0bg%d3%ee%a8%ab%09J%001%a2J%00%11%8a%1c%c6%04%19y%ba%8a%96W%01@%12%a2%0a8{sq%00~%00y%00%00%00%00%00%04%93%e0"
+      },
+      "non_parallel_inputs" : { },
+      "user_name" : {
+        "@type" : "http://schema.org/Text",
+        "value" : "Write File(s)/WriteFiles/FinalizeWindowed"
+      },
+      "user_fn" : {
+        "@type" : "http://schema.org/Text",
+        "value" : "org.apache.beam.sdk.io.WriteFiles$FinalizeWindowedFn"
+      },
+      "display_data" : [ {
+        "namespace" : "org.apache.beam.sdk.transforms.ParDo$SingleOutput",
+        "key" : "fn",
+        "type" : "JAVA_CLASS",
+        "value" : "org.apache.beam.sdk.io.WriteFiles$FinalizeWindowedFn",
+        "shortValue" : "FinalizeWindowedFn",
+        "label" : "Transform Function"
+      } ],
+      "parallel_input" : {
+        "@type" : "OutputReference",
+        "output_name" : "11",
+        "step_name" : "s11"
+      },
+      "output_info" : [ {
+        "output_name" : {
+          "@type" : "http://schema.org/Text",
+          "value" : "12"
+        },
+        "user_name" : {
+          "@type" : "http://schema.org/Text",
+          "value" : "Write File(s)/WriteFiles/FinalizeWindowed.out0"
+        },
+        "encoding" : {
+          "@type" : "kind:windowed_value",
+          "is_wrapper" : {
+            "@type" : "http://schema.org/Boolean",
+            "value" : true
+          },
+          "component_encodings" : [ {
+            "@type" : "kind:pair",
+            "is_pair_like" : {
+              "@type" : "http://schema.org/Boolean",
+              "value" : true
+            },
+            "component_encodings" : [ {
+              "@type" : "org.apache.beam.sdk.coders.VoidCoder"
+            }, {
+              "@type" : "org.apache.beam.sdk.coders.StringUtf8Coder"
+            } ]
+          }, {
+            "@type" : "kind:interval_window"
+          } ]
+        }
+      } ]
+    }
+  } ],
+  "type" : "JOB_TYPE_STREAMING"
+}

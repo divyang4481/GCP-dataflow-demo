@@ -1,0 +1,41 @@
+{
+  "name": "GCS Text to Datastore", 
+  "parameters": [
+    {
+      "helpText": "Pattern to where text data files live, ex: gs://mybucket/somepath/*.json", 
+      "name": "textReadPattern", 
+      "label": "Input file pattern for input text files", 
+      "regexes": [
+        "^gs:\\/\\/[^\\n\\r]+$"
+      ]
+    }, 
+    {
+      "helpText": "[Optional] A GCS path which contains all your Javascript code. e.g: \"gs://mybucket/mytransforms/*.js\". If you don't want to use a UDF leave this field blank.", 
+      "name": "javascriptTextTransformGcsPath", 
+      "isOptional": true, 
+      "label": "Javascript UDF GCS path", 
+      "regexes": [
+        "^gs:\\/\\/[^\\n\\r]+$"
+      ]
+    }, 
+    {
+      "helpText": "[Optional] Name of the Function to be called. If you have the javascript code of: \"function myTransform(inJson) { ...dostuff...}\" then your function name is \"myTransform\". If you don't want to use a UDF leave this field blank.", 
+      "name": "javascriptTextTransformFunctionName", 
+      "isOptional": true, 
+      "label": "Javascript UDF function name", 
+      "regexes": [
+        "^.+$"
+      ]
+    }, 
+    {
+      "name": "datastoreWriteProjectId", 
+      "label": "GCP project id of where to write the datastore entities"
+    }, 
+    {
+      "helpText": "Example: gs://mybucket/somepath/errors.txt", 
+      "name": "errorWritePath", 
+      "label": "Pattern of where to write errors"
+    }
+  ], 
+  "description": "Dataflow template which reads from a Text Source and writes JSON encoded Entities into Datastore. The Json is expected to be in the format of https://cloud.google.com/datastore/docs/reference/rest/v1/Entity ."
+}

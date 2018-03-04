@@ -1,0 +1,67 @@
+{
+  "name": "Cloud Pub/Sub to Avro", 
+  "parameters": [
+    {
+      "helpText": "Cloud Pub/Sub Topic to subscribe for message consumption. The topic name should be in the format of projects/<project-id>/topics/<topic-name>.", 
+      "name": "inputTopic", 
+      "label": "Input Cloud Pub/Sub Topic", 
+      "regexes": [
+        "^projects\\/[^\\n\\r\\/]+\\/topics\\/[^\\n\\r\\/]+$"
+      ]
+    }, 
+    {
+      "helpText": "Output Directory where output Avro Files will be archived. Please add / at the end. For eg: gs://example-bucket/example-directory/", 
+      "name": "outputDirectory", 
+      "label": "Output Directory inside GCS", 
+      "regexes": [
+        "^gs:\\/\\/[^\\n\\r]+\\/$"
+      ]
+    }, 
+    {
+      "helpText": "Output Filename Prefix for the Avro Files. Default value is output when this parameter is not specified.", 
+      "name": "Output Filename Prefix", 
+      "isOptional": true, 
+      "label": "Output Filename Prefix for the output Avro Files", 
+      "regexes": [
+        "^[a-zA-Z]+$"
+      ]
+    }, 
+    {
+      "helpText": "Output Filename Suffix for the Avro Files. Default is not to have suffix when this parameter is not specified.", 
+      "name": "Output Filename Suffix", 
+      "isOptional": true, 
+      "label": "Output Filename Suffix for the output Avro Files", 
+      "regexes": [
+        "^[\\.a-zA-Z]+$"
+      ]
+    }, 
+    {
+      "helpText": "The shard template of the output file. Specified as repeating sequences of the letters 'S' or 'N' (example: SSS-NNN). These are replaced with the shard number, or number of shards respectively. Default Template Format is 'W-P-SS-of-NN' when this parameter is not specified.", 
+      "name": "Output Shard Template", 
+      "isOptional": true, 
+      "label": "Output Shard Template format for the output Avro Files", 
+      "regexes": [
+        "^W-P-(S)\u0001{1,}-of-(N)\u0002{1,}$"
+      ]
+    }, 
+    {
+      "helpText": "The maximum number of output shards produced when writing.Default maximum number of Shards is 1", 
+      "name": "Maximum Number of Output Shards", 
+      "isOptional": true, 
+      "label": "Maximum Number of Output Shards", 
+      "regexes": [
+        "^[1-9]+$"
+      ]
+    }, 
+    {
+      "helpText": "The window duration in which data will be written. Defaults to 5m. Allowed formats are: Ns (for seconds, example: 5s), Nm (for minutes, example: 12m), Nh (for hours, example: 2h).", 
+      "name": "Window Duration", 
+      "isOptional": true, 
+      "label": "Window Duration for Windowed Avro Files Creation", 
+      "regexes": [
+        "^([1-9]|1[0-9]|2[0-4])h$|^(([1-9]|[1-5][0-9]|60)(s|m))$"
+      ]
+    }
+  ], 
+  "description": "A pipeline that reads from a Pub/Sub subscription and writes Windowed Avro Files at the specified output directory"
+}

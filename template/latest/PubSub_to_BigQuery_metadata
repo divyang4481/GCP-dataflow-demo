@@ -1,0 +1,40 @@
+{
+  "name": "Cloud Pub/Sub to BigQuery", 
+  "parameters": [
+    {
+      "helpText": "Cloud Pub/Sub topic to read the input from, in the format of 'projects/<project>/topics/<topic>'", 
+      "name": "inputTopic", 
+      "label": "Cloud Pub/Sub input topic", 
+      "regexes": [
+        "^projects\\/[^\\n\\r\\/]+\\/topics\\/[^\\n\\r\\/]+$"
+      ]
+    }, 
+    {
+      "helpText": "The full URL of your .js file. Example: gs://my_bucket/my_function.js", 
+      "name": "javascriptTextTransformGcsPath", 
+      "isOptional": true, 
+      "label": "GCS location of your Javascript UDF", 
+      "regexes": [
+        "^gs:\\/\\/[^\\n\\r]+$"
+      ]
+    }, 
+    {
+      "helpText": "The function name should only contain letters, digits and underscores. Example: 'transform' or 'transform_udf1'.", 
+      "name": "javascriptTextTransformFunctionName", 
+      "isOptional": true, 
+      "label": "The name of the javascript function you wish to call as your UDF", 
+      "regexes": [
+        "[a-zA-Z0-9_]+"
+      ]
+    }, 
+    {
+      "helpText": "BigQuery table location (<project>:<dataset>.<table_name>) to write the output to. The table\u2019s schema must match the input JSON objects.", 
+      "name": "outputTableSpec", 
+      "label": "BigQuery output table", 
+      "regexes": [
+        ".+:.+\\..+"
+      ]
+    }
+  ], 
+  "description": "A pipeline that ingests a Cloud Pub/Sub stream of JSON-encoded messages, performs a transform via a user defined javascript function, and writes to a pre-existing BigQuery table."
+}

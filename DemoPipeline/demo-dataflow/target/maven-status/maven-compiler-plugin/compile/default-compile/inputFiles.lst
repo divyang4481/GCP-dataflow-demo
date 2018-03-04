@@ -1,0 +1,12 @@
+D:\Projects\POC\DemoPipeline\demo-dataflow\src\main\java\com\poc\MinimalWordCount.java
+D:\Projects\POC\DemoPipeline\demo-dataflow\src\main\java\com\poc\common\ExampleUtils.java
+D:\Projects\POC\DemoPipeline\demo-dataflow\src\main\java\com\poc\DebuggingWordCount.java
+D:\Projects\POC\DemoPipeline\demo-dataflow\src\main\java\com\poc\DemoPipeline.java
+D:\Projects\POC\DemoPipeline\demo-dataflow\src\main\java\com\poc\WordCount.java
+D:\Projects\POC\DemoPipeline\demo-dataflow\src\main\java\com\poc\common\BigQueryConverters.java
+D:\Projects\POC\DemoPipeline\demo-dataflow\src\main\java\com\poc\common\ExamplePubsubTopicAndSubscriptionOptions.java
+D:\Projects\POC\DemoPipeline\demo-dataflow\src\main\java\com\poc\WindowedWordCount.java
+D:\Projects\POC\DemoPipeline\demo-dataflow\src\main\java\com\poc\common\ExampleBigQueryTableOptions.java
+D:\Projects\POC\DemoPipeline\demo-dataflow\src\main\java\com\poc\common\ExampleOptions.java
+D:\Projects\POC\DemoPipeline\demo-dataflow\src\main\java\com\poc\common\WriteOneFilePerWindow.java
+D:\Projects\POC\DemoPipeline\demo-dataflow\src\main\java\com\poc\common\ExamplePubsubTopicOptions.java

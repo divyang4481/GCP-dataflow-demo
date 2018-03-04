@@ -1,0 +1,40 @@
+{
+  "name": "Cloud Pub/Sub to Cloud Pub/Sub", 
+  "parameters": [
+    {
+      "helpText": "Cloud Pub/Sub subscription to read the input from. The subscription name should be in the format of projects/<project-id>/subscriptions/<subscription-name>.", 
+      "name": "inputSubscription", 
+      "label": "Input Cloud Pub/Sub subscription", 
+      "regexes": [
+        "^projects\\/[^\\n\\r\\/]+\\/subscriptions\\/[^\\n\\r\\/]+$"
+      ]
+    }, 
+    {
+      "helpText": "Cloud Pub/Sub topic to write the output to. The topic name should be in the format of projects/<project-id>/topics/<topic-name>.", 
+      "name": "outputTopic", 
+      "label": "Output Cloud Pub/Sub topic", 
+      "regexes": [
+        "^projects\\/[^\\n\\r\\/]+\\/topics\\/[^\\n\\r\\/]+$"
+      ]
+    }, 
+    {
+      "helpText": "Filter events based on an optional attribute key. No filters are applied if a filterKey is not specified.", 
+      "name": "filterKey", 
+      "isOptional": true, 
+      "label": "Event filter key", 
+      "regexes": [
+        "^[a-z_A-Z0-9\\/]+$"
+      ]
+    }, 
+    {
+      "helpText": "Filter attribute value to use in case a filterKey is provided. A null filterValue is used by default.", 
+      "name": "filterValue", 
+      "isOptional": true, 
+      "label": "Event filter value", 
+      "regexes": [
+        "^[a-z_A-Z0-9\\/]+$"
+      ]
+    }
+  ], 
+  "description": "A pipeline that reads from a Pub/Sub subscription and writes to another Pub/Sub topic."
+}

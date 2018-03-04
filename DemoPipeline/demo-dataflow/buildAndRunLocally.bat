@@ -1,0 +1,1 @@
+mvn compile exec:java    -Dexec.mainClass=com.poc.DemoPipeline     -Dexec.args=" --project=dataflowdemo-196913 --outputTableSpec='dataflowdemo-196913:demo.pipelinedump'  --inputTopic='projects/dataflowdemo-196913/topics/test'"

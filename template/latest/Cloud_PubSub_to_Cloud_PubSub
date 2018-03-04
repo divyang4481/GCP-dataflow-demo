@@ -1,0 +1,410 @@
+{
+  "clientRequestId" : "20180302212956029_7771",
+  "environment" : {
+    "dataset" : "bigquery.googleapis.com/cloud_dataflow",
+    "sdkPipelineOptions" : {
+      "options" : {
+        "dataflowEndpoint" : "",
+        "experiments" : null,
+        "project" : "dataflow-templates",
+        "overrideWindmillBinary" : null,
+        "outputTopic" : null,
+        "streaming" : true,
+        "enableCloudDebugger" : false,
+        "zone" : null,
+        "gcpTempLocation" : "gs://dataflow-staging-us-central1-473832897378/temp/",
+        "runner" : "org.apache.beam.runners.dataflow.DataflowRunner",
+        "credentialFactoryClass" : "org.apache.beam.sdk.extensions.gcp.auth.GcpCredentialFactory",
+        "googleApiTrace" : null,
+        "jobName" : "pubsubtopubsub-dataflow0releaser-0302212955-a048194",
+        "appName" : "PubsubToPubsub",
+        "optionsId" : 0,
+        "apiRootUrl" : "https://dataflow.googleapis.com/",
+        "userAgent" : "Apache_Beam_SDK_for_Java/2.2.0",
+        "stagingLocation" : "gs://dataflow-templates-libraries/2018-03-02-00_RC00",
+        "stagerClass" : "org.apache.beam.runners.dataflow.util.GcsStager",
+        "filterKey" : null,
+        "tempLocation" : "gs://dataflow-staging-us-central1-473832897378/temp/",
+        "inputSubscription" : null,
+        "stableUniqueNames" : "WARNING",
+        "saveProfilesToGcs" : null,
+        "numberOfWorkerHarnessThreads" : 0,
+        "filterValue" : null,
+        "gcsUploadBufferSizeBytes" : 1048576,
+        "templateLocation" : "gs://dataflow-templates-staging/2018-03-02-00_RC00/Cloud_PubSub_to_Cloud_PubSub",
+        "pathValidatorClass" : "org.apache.beam.sdk.extensions.gcp.storage.GcsPathValidator"
+      },
+      "display_data" : [ {
+        "namespace" : "org.apache.beam.sdk.options.StreamingOptions",
+        "key" : "streaming",
+        "type" : "BOOLEAN",
+        "value" : true
+      }, {
+        "namespace" : "org.apache.beam.sdk.options.PipelineOptions",
+        "key" : "jobName",
+        "type" : "STRING",
+        "value" : "pubsubtopubsub-dataflow0releaser-0302212955-a048194"
+      }, {
+        "namespace" : "org.apache.beam.sdk.options.ApplicationNameOptions",
+        "key" : "appName",
+        "type" : "STRING",
+        "value" : "PubsubToPubsub"
+      }, {
+        "namespace" : "org.apache.beam.sdk.options.PipelineOptions",
+        "key" : "tempLocation",
+        "type" : "STRING",
+        "value" : "gs://dataflow-staging-us-central1-473832897378/temp/"
+      }, {
+        "namespace" : "org.apache.beam.runners.dataflow.options.DataflowPipelineOptions",
+        "key" : "templateLocation",
+        "type" : "STRING",
+        "value" : "gs://dataflow-templates-staging/2018-03-02-00_RC00/Cloud_PubSub_to_Cloud_PubSub"
+      }, {
+        "namespace" : "org.apache.beam.sdk.options.PipelineOptions",
+        "key" : "runner",
+        "type" : "JAVA_CLASS",
+        "value" : "org.apache.beam.runners.dataflow.DataflowRunner",
+        "shortValue" : "DataflowRunner"
+      }, {
+        "namespace" : "org.apache.beam.runners.dataflow.options.DataflowPipelineOptions",
+        "key" : "project",
+        "type" : "STRING",
+        "value" : "dataflow-templates"
+      }, {
+        "namespace" : "org.apache.beam.sdk.options.PipelineOptions",
+        "key" : "userAgent",
+        "type" : "STRING",
+        "value" : "Apache_Beam_SDK_for_Java/2.2.0"
+      }, {
+        "namespace" : "org.apache.beam.runners.dataflow.options.DataflowPipelineOptions",
+        "key" : "stagingLocation",
+        "type" : "STRING",
+        "value" : "gs://dataflow-templates-libraries/2018-03-02-00_RC00"
+      }, {
+        "namespace" : "org.apache.beam.sdk.extensions.gcp.options.GcsOptions",
+        "key" : "gcsUploadBufferSizeBytes",
+        "type" : "INTEGER",
+        "value" : 1048576
+      } ]
+    },
+    "tempStoragePrefix" : "storage.googleapis.com/dataflow-staging-us-central1-473832897378/temp/",
+    "userAgent" : {
+      "os.arch" : "amd64",
+      "name" : "Apache Beam SDK for Java",
+      "java.version" : "1.8.0_112-google-v7",
+      "fnapi.environment.major.version" : "1",
+      "os.version" : "4.3.5-smp-810.15.0.0",
+      "os.name" : "Linux",
+      "java.vendor" : "Google Inc.",
+      "version" : "2.2.0",
+      "container.version" : "2.2.0",
+      "legacy.environment.major.version" : "6"
+    },
+    "version" : {
+      "major" : "6",
+      "job_type" : "STREAMING"
+    },
+    "workerPools" : [ {
+      "autoscalingSettings" : {
+        "maxNumWorkers" : 0
+      },
+      "dataDisks" : [ { } ],
+      "numWorkers" : 0,
+      "packages" : [ {
+        "location" : "gs://dataflow-templates-libraries/2018-03-02-00_RC00/teleport-all-bundled-I6CuiHHI6lnxFA7Iom5aTA.jar",
+        "name" : "teleport-all-bundled-I6CuiHHI6lnxFA7Iom5aTA.jar"
+      } ],
+      "workerHarnessContainerImage" : "dataflow.gcr.io/v1beta3/beam-java-streaming:2.2.0"
+    } ]
+  },
+  "name" : "pubsubtopubsub-dataflow0releaser-0302212955-a048194",
+  "steps" : [ {
+    "kind" : "ParallelRead",
+    "name" : "s1",
+    "properties" : {
+      "pubsub_subscription_runtime_override" : {
+        "@type" : "http://schema.org/Text",
+        "value" : "inputSubscription"
+      },
+      "pubsub_serialized_attributes_fn" : {
+        "@type" : "http://schema.org/Text",
+        "value" : "%82SNAPPY%00%00%00%00%01%00%00%00%01%00%00%00%bb%d0%01%c8%ac%ed%00%05sr%00Aorg.apache.beam.runners.dataflow.DataflowRu%01%19%80$IdentityMessageFn%df+D%103N%8c%f1%02%00%00xr%00->P%00%d0sdk.transforms.SimpleFunctionb%a2%ef%dajq%cet%02%00%01L%00%02fnt%005Lorg/%09%91%00/%01%91%10/sdk/%19A`/SerializableFunction;xpp"
+      },
+      "user_name" : {
+        "@type" : "http://schema.org/Text",
+        "value" : "Read PubSub Events/PubsubUnboundedSource"
+      },
+      "display_data" : [ ],
+      "format" : {
+        "@type" : "http://schema.org/Text",
+        "value" : "pubsub"
+      },
+      "output_info" : [ {
+        "output_name" : {
+          "@type" : "http://schema.org/Text",
+          "value" : "1"
+        },
+        "user_name" : {
+          "@type" : "http://schema.org/Text",
+          "value" : "Read PubSub Events/PubsubUnboundedSource.out0"
+        },
+        "encoding" : {
+          "@type" : "kind:windowed_value",
+          "is_wrapper" : {
+            "@type" : "http://schema.org/Boolean",
+            "value" : true
+          },
+          "component_encodings" : [ {
+            "@type" : "org.apache.beam.sdk.coders.CustomCoder",
+            "type" : {
+              "@type" : "http://schema.org/Text",
+              "value" : "org.apache.beam.sdk.io.gcp.pubsub.PubsubMessageWithAttributesCoder"
+            },
+            "serialized_coder" : {
+              "@type" : "http://schema.org/Text",
+              "value" : "%82SNAPPY%00%00%00%00%01%00%00%00%01%00%00%00%92%bb%01%f0X%ac%ed%00%05sr%00Borg.apache.beam.sdk.io.gcp.pubsub.PubsubMessageWithAttributesCoder%de%88%17?%e0%93%d6U%02%00%00xr%00&NQ%004coders.CustomC%01%0d j%b0%08%9d%0b;%1d%0b%02%055%00 n5%00%01/0C%dd%d5%89%ae%bc~%f8%02%00%00xp"
+            }
+          }, {
+            "@type" : "kind:global_window"
+          } ]
+        }
+      } ]
+    }
+  }, {
+    "kind" : "ParallelDo",
+    "name" : "s2",
+    "properties" : {
+      "serialized_fn" : {
+        "@type" : "http://schema.org/Text",
+        "value" : "%82SNAPPY%00%00%00%00%01%00%00%00%01%00%00%07b%bd%1d%f0O%ac%ed%00%05sr%00!org.apache.beam.sdk.util.DoFnInfo%11%8ed%e2%c7+%87%1b%02%00%06J%00%0amainOutputL%00%04doFnt%00%25Lorg/%09D%00/%01D</sdk/transforms/%01JH;L%00%0ainputCodert%00%22LoJ5%00%00c%01%1d%04s/%05$%14;L%00%09ou%01j,Mapt%00%0fLjava/%01%9b0/Map;L%00%0esideI%01T%1cViewst%00%14%09#%90lang/Iterable;L%00%11windowingStrategyt%00.R%7f%00%1cvalues/W>0%00%0c;xp%00%09%01%10%02sr%00,N3%01%19%ef%90.MapElements$1rO@%86%09P%b93%02%00%01L%00%06this$0t%00,R%7f%00%19D%01%e2%11D%10;xr%00#zs%00!b@%acD#%06%ce%93%bd%9d%02%00%00xpsr%00*z4%00%1d%a7H%8b%c3e?%d4@%aa%d3%02%00%02L%00%02fnt%00/~%a1%000SimpleFunctio!%deT%12fnClassDisplayDatat%00=~G%00%00d%09.%00/%1d6 $ItemSpec%01%f9%00)z%c5%00%04PTQg +%16Uq%88%89f%c7%03%01%ff%10xsr%00<N;%008io.gcp.pubsub.P%05%07lIO$IdentityMessageFno%0a%a3G%80Cd%9e!M%08r%00-NK%009%ae%00.6%0d%01%1cb%a2%ef%dajq%cet%25%f3%25N%005~%07%01%1cSerializA%b25T%04xp!%c7%00Ez|%00-B%14.AutoVA%c0%00_=L%00_1LL0%b5%12S%c4%d1%faQ%02%00%07L%00%03keyt%00%12}.pString;L%00%05labelq%00~%00%15L%00%07linkUr%11%0f0%09namespacet%00%11%1d=%25%f7a%e0%10short%05%846^%00@Object;L%00%04typet%009~%0f%01%0d%d4%00/%1d%ca%0c$Typa%cd%00%05e%a4%01%a1%10%17xr%00;%9a%1d%01.I%001%13%1c%acD %db1?%19%02!%e3<pt%00%05mapFnt%00%0cMap 1%84%10ppt%00%11B%1d%02%0c~r%007%cay%00%01%c2%89F %00%00%12%00%00xr%00%0e%81%d3%00.%81%b0%10.Enum.%1d%008pt%00%0aJAVA_CLASSt%f6%ce%02%0csr%00BN%b1%00N%0e%03m%038WithAttributesC%a1%98%1c%de%88%17?%e0%93%d6U!1%08r%00&NQ%00%a9%c0%18.Custom%055%1cj%b0%08%9d%0b;%1d%0b%095%00 n5%00%01d%1cC%dd%d5%89%ae%bc~%f8%01/A%fe%00c>1%00%e8runners.dataflow.repackaged.com.google.common.collect.Immuta]%14BiMap$qo%10edFor5w%01t%08r%00a%fer%00:r%00np%00,%02[%00%04keyst%00%13[}Qm0%08[%00%06E%ed%00sA%ee%10)xpur%11'I3%0d'%1c%90%ceX%9f%10s)l%01%bf%14p%00%00%00%01s2Y%02<Long;%8b%e4%90%cc%8f#%df%02%00%01JmB%0cxr%00%10Y~4Number%86%ac%95%1d%0b%94%e0%8b%11J%01%01%04%02u%01~%00+%0dXR%88%06%09%a5%90.TupleTag%b3%18yf[%c0z%b5%02%00%02Z%00%09generatedL%00%02id%01L %15xp%00t%00%06ou%e1%db%0csr%00%1f%05%87%e1%d8%04.C)%afTions$EmptyListz%b8%17%b4<%a7%9e%de%05%96^%7f%07%0d%84B%ba%07p%a4Mf$.%cc%15%e5%02%00%0bZ%00%18allowedLateness%c1e,ifiedZ%00%0dmode%1d%10D%1atimestampCombiner%1d%1d%14%10trigg%1d%13%08L%00%0f:[%00%08t%00%18%85%e5%10joda/%01L%10/Dura%01%daT;L%00%0fclosingBehaviort%00A%05-%04ap%0e%87%09RC%09%22%c3%08%1a%9d%08%04$C6C%00%a1]%01%c3%08t%00?RK%00) %0d=%00i&%0a%09%1c$Accumul%05%9b%08Mod%a1c%18%0eonTime%19%9e%00@RS%00%f9%00F%9e%00%00O2B%00%0e%84%09!%042P%01%08t%00<%a6W%00%01%902>%00%0c;L%00%07-%86%08t%002%aaI%00)%ba%0c;L%00%08)S%10Fnt%003%a6@%00Ia%04Fn%1a%12%0a%0csr%00%16%810!%e7%00.%01%e3%00.1%e7%1c%00%00%02?zQ%ce%d6A%b6%08r%00%1f6%25%00 base.Base%1d.%10Y%19:%f4%8ee%a1%1c%07iMillise%ce%05%01%0c~r%00?%01BI!%04.b%1e%a8%0b9%83%00.%09%ce%0cing.%09%a3>!%02%05H%cdya%86`%1ft%00%11FIRE_IF_NON_EMPTY~r%00=Nh%00I>%0dZn>%02%01b%01%01%c1%df%0df,%16DISCARDING_%01q(D_PANES~r%00>Nk%00n%d3%006V%02%01h%01%01%1dl%00%0b%01a%14_ALWAY%01a%00:%a2a%00B`%02%01Y%01%01%1d]@%0dEND_OF_WINDOWsr%00~%04%089%93%18DefaultM}%1c%b1%0a%e3%87%d1%bd:sI%1b%000%a6%a5%00I%bc%1c6M3!y%faA%0f%12_%0a%0c%0bsub%0d%18%0cst%00%10%c9E%a1L%00/%a1;%08;xp!%86%105sr%006%a2g%00%14GlobalIF s%91%0c%e4%e00%f3%16 %09%ac%00;%a2E%00$NonMerging%09I$FnW%06%0bg%d3%ee%a8%ab%09J%001%a2J%00%11@0%c6%04%19y%ba%8a%96W%02%00%00xp"
+      },
+      "non_parallel_inputs" : { },
+      "user_name" : {
+        "@type" : "http://schema.org/Text",
+        "value" : "Read PubSub Events/MapElements/Map"
+      },
+      "user_fn" : {
+        "@type" : "http://schema.org/Text",
+        "value" : "org.apache.beam.sdk.transforms.MapElements$1"
+      },
+      "display_data" : [ {
+        "namespace" : "org.apache.beam.sdk.transforms.ParDo$SingleOutput",
+        "key" : "fn",
+        "type" : "JAVA_CLASS",
+        "value" : "org.apache.beam.sdk.transforms.MapElements$1",
+        "shortValue" : "",
+        "label" : "Transform Function"
+      }, {
+        "namespace" : "org.apache.beam.sdk.transforms.MapElements",
+        "key" : "mapFn",
+        "type" : "JAVA_CLASS",
+        "value" : "org.apache.beam.sdk.io.gcp.pubsub.PubsubIO$IdentityMessageFn",
+        "shortValue" : "IdentityMessageFn",
+        "label" : "Map Function"
+      } ],
+      "parallel_input" : {
+        "@type" : "OutputReference",
+        "output_name" : "1",
+        "step_name" : "s1"
+      },
+      "output_info" : [ {
+        "output_name" : {
+          "@type" : "http://schema.org/Text",
+          "value" : "2"
+        },
+        "user_name" : {
+          "@type" : "http://schema.org/Text",
+          "value" : "Read PubSub Events/MapElements/Map.out0"
+        },
+        "encoding" : {
+          "@type" : "kind:windowed_value",
+          "is_wrapper" : {
+            "@type" : "http://schema.org/Boolean",
+            "value" : true
+          },
+          "component_encodings" : [ {
+            "@type" : "org.apache.beam.sdk.coders.CustomCoder",
+            "type" : {
+              "@type" : "http://schema.org/Text",
+              "value" : "org.apache.beam.sdk.io.gcp.pubsub.PubsubMessageWithAttributesCoder"
+            },
+            "serialized_coder" : {
+              "@type" : "http://schema.org/Text",
+              "value" : "%82SNAPPY%00%00%00%00%01%00%00%00%01%00%00%00%92%bb%01%f0X%ac%ed%00%05sr%00Borg.apache.beam.sdk.io.gcp.pubsub.PubsubMessageWithAttributesCoder%de%88%17?%e0%93%d6U%02%00%00xr%00&NQ%004coders.CustomC%01%0d j%b0%08%9d%0b;%1d%0b%02%055%00 n5%00%01/0C%dd%d5%89%ae%bc~%f8%02%00%00xp"
+            }
+          }, {
+            "@type" : "kind:global_window"
+          } ]
+        }
+      } ]
+    }
+  }, {
+    "kind" : "ParallelDo",
+    "name" : "s3",
+    "properties" : {
+      "serialized_fn" : {
+        "@type" : "http://schema.org/Text",
+        "value" : "%82SNAPPY%00%00%00%00%01%00%00%00%01%00%00%06%0f%91%16%f0O%ac%ed%00%05sr%00!org.apache.beam.sdk.util.DoFnInfo%11%8ed%e2%c7+%87%1b%02%00%06J%00%0amainOutputL%00%04doFnt%00%25Lorg/%09D%00/%01D</sdk/transforms/%01JH;L%00%0ainputCodert%00%22LoJ5%00%00c%01%1d%04s/%05$%14;L%00%09ou%01j,Mapt%00%0fLjava/%01%9b0/Map;L%00%0esideI%01T%1cViewst%00%14%09#%90lang/Iterable;L%00%11windowingStrategyt%00.R%7f%00%1cvalues/W>0%00%0c;xp%00%09%01%c0%03sr%00Kcom.google.cloud.teleport.templates.PubsubTo%09%08%a0$ExtractAndFilterEventsFn%e1H%ef%b1%1c%be%dd}%02%00%03L%00%08do%09%1e%08t%00%13%1d%cb%18Boolean%01%f2%00i%01%ee%09$%14Keyt%00%12%1d'$String;L%00%10%1d&%00V%01%d2 q%00~%00%09xr%00#N%ec%019%a8%25%f2L%acD#%06%ce%93%bd%9d%02%00%00xppppsr%00BN7%00 io.gcp.pu%01%e7%00.%09%e6PMessageWithAttributes%25%cc%1c%de%88%17?%e0%93%d6U%01V%08r%00&NQ%00)%fb%18.Custom%055%1cj%b0%08%9d%0b;%1d%0b%095%00 n5%00A7%1cC%dd%d5%89%ae%bc~%f8%01/%01%b7%00c>1%00lrunners.dataflow.repackaged..%d3%01Hommon.collect.ImmutAJLBiMap$SerializedFormI%15%04%00%00%01t%08r%00a%fer%00:r%00np%00,%02[%00%04keyst%00%13[]%05$Object;[%00%06I%cc!%fb%10%12xpur%11'%00.a%1e%00.%0d'%1c%90%ceX%9f%10s)l%01%bf p%00%00%00%01sr%00%0eag%09&DLong;%8b%e4%90%cc%8f#%df%02%00%01J%00%05%05U%0cxr%00%10%19%254Number%86%ac%95%1d%0b%94%e0%8b%11J%01%01%04%03u%01~%00%14%0dXR}%02%05Pls.TupleTag%b3%18yf[%c0z%b5%02%00%02Z%00%09genea%b0%14dL%00%02id%01L %09xp%00t%00%06ou%81%16%0csr%00%1f%05%87%81%13%04.C)%afTions$EmptyListz%b8%17%b4<%a7%9e%de%05%96%0csr%00,>%a1%01%81%ed%0d%84B%f5%03%b0%a4Mf$.%cc%15%e5%02%00%0bZ%00%18allowedLatenessSpecifiedZ%00%0dmode%1d%10D%1atimestampCombiner%1d%1d%14%10trigg%1d%13%08L%00%0f:[%00%08t%00%18%85%9d%10joda/%01L%10/Dura%01%daT;L%00%0fclosingBehaviort%00A%05-j~%05%95%fe%8d%d8%04$C6C%00%0c;L%00%04%01%c3%08t%00?RK%00) %0d=%00i%b9E%1c$Accumul%05%9b%08Mod%a1k%18%0eonTime%19%9e%00@RS%00%99tF%9e%00%00O2B%00%a1%bf!%042P%01%08t%00<%a6W%00%01%902>%00%0c;L%00%07-%86%08t%002%aaI%00)%ba%0c;L%00%08)S%10Fnt%003%a6@%00Ia%04Fn%cdM%0csr%00%16A%8f!%e7%00.%01%e3%00.1%e7%1c%00%00%02?zQ%ce%d6A%b6%08r%00%1f6%25%00 base.Base%1d.%10Y%19:%f4%8ee%a1%1c%07iMillise%ce%05%01%0c~r%00?%01BI!%00.%e1%9fE%f69%83%00.%09%ce%0cing.%09%a3>!%02%05H%1c%00%00%00%12%00%00xr. %04%08Enu%b5%02%01%1d`pt%00%11FIRE_IF_NON_EMPTY~r%00=N%81%00IW%0dsnW%02%01{%01%01%01b%81%058,t%00%16DISCARDING_%01q(D_PANES~r%00>Nk%00n%ec%006o%02%01h%01%01%1dl%00%0b%01a%14_ALWAY%01a%00:%a2a%00By%02%01Y%01%01%1d]D%0dEND_OF_WINDOWsr%007%a2_%00%18DefaultM%96%1c%b1%0a%e3%87%d1%bd:sI4%000%a2F%00%0d?@6M3!y%faA%0f%02%00%01L%00%0bsub%0d%18%0cst%00%10%c9^%a1e%00/%a1T%08;xp!%86%10%1esr%006%a2g%00%14GlobalI_ s%91%0c%e4%e00%f3%16 %09%ac%00;%a2E%00$NonMerging%09I$FnW%06%0bg%d3%ee%a8%ab%09J%001%a2J%00%11@0%c6%04%19y%ba%8a%96W%02%00%00xp"
+      },
+      "non_parallel_inputs" : { },
+      "user_name" : {
+        "@type" : "http://schema.org/Text",
+        "value" : "Filter Events If Enabled"
+      },
+      "user_fn" : {
+        "@type" : "http://schema.org/Text",
+        "value" : "com.google.cloud.teleport.templates.PubsubToPubsub$ExtractAndFilterEventsFn"
+      },
+      "display_data" : [ {
+        "namespace" : "org.apache.beam.sdk.transforms.ParDo$SingleOutput",
+        "key" : "fn",
+        "type" : "JAVA_CLASS",
+        "value" : "com.google.cloud.teleport.templates.PubsubToPubsub$ExtractAndFilterEventsFn",
+        "shortValue" : "ExtractAndFilterEventsFn",
+        "label" : "Transform Function"
+      } ],
+      "parallel_input" : {
+        "@type" : "OutputReference",
+        "output_name" : "2",
+        "step_name" : "s2"
+      },
+      "output_info" : [ {
+        "output_name" : {
+          "@type" : "http://schema.org/Text",
+          "value" : "3"
+        },
+        "user_name" : {
+          "@type" : "http://schema.org/Text",
+          "value" : "Filter Events If Enabled.out0"
+        },
+        "encoding" : {
+          "@type" : "kind:windowed_value",
+          "is_wrapper" : {
+            "@type" : "http://schema.org/Boolean",
+            "value" : true
+          },
+          "component_encodings" : [ {
+            "@type" : "org.apache.beam.sdk.coders.CustomCoder",
+            "type" : {
+              "@type" : "http://schema.org/Text",
+              "value" : "org.apache.beam.sdk.io.gcp.pubsub.PubsubMessageWithAttributesCoder"
+            },
+            "serialized_coder" : {
+              "@type" : "http://schema.org/Text",
+              "value" : "%82SNAPPY%00%00%00%00%01%00%00%00%01%00%00%00%92%bb%01%f0X%ac%ed%00%05sr%00Borg.apache.beam.sdk.io.gcp.pubsub.PubsubMessageWithAttributesCoder%de%88%17?%e0%93%d6U%02%00%00xr%00&NQ%004coders.CustomC%01%0d j%b0%08%9d%0b;%1d%0b%02%055%00 n5%00%01/0C%dd%d5%89%ae%bc~%f8%02%00%00xp"
+            }
+          }, {
+            "@type" : "kind:global_window"
+          } ]
+        }
+      } ]
+    }
+  }, {
+    "kind" : "ParallelDo",
+    "name" : "s4",
+    "properties" : {
+      "serialized_fn" : {
+        "@type" : "http://schema.org/Text",
+        "value" : "%82SNAPPY%00%00%00%00%01%00%00%00%01%00%00%07b%bd%1d%f0O%ac%ed%00%05sr%00!org.apache.beam.sdk.util.DoFnInfo%11%8ed%e2%c7+%87%1b%02%00%06J%00%0amainOutputL%00%04doFnt%00%25Lorg/%09D%00/%01D</sdk/transforms/%01JH;L%00%0ainputCodert%00%22LoJ5%00%00c%01%1d%04s/%05$%14;L%00%09ou%01j,Mapt%00%0fLjava/%01%9b0/Map;L%00%0esideI%01T%1cViewst%00%14%09#%90lang/Iterable;L%00%11windowingStrategyt%00.R%7f%00%1cvalues/W>0%00%0c;xp%00%09%01%10%04sr%00,N3%01%19%ef%90.MapElements$1rO@%86%09P%b93%02%00%01L%00%06this$0t%00,R%7f%00%19D%01%e2%11D%10;xr%00#zs%00!b@%acD#%06%ce%93%bd%9d%02%00%00xpsr%00*z4%00%1d%a7H%8b%c3e?%d4@%aa%d3%02%00%02L%00%02fnt%00/~%a1%000SimpleFunctio!%deT%12fnClassDisplayDatat%00=~G%00%00d%09.%00/%1d6 $ItemSpec%01%f9%00)z%c5%00%04PTQg +%16Uq%88%89f%c7%03%01%ff%10xsr%00<N;%008io.gcp.pubsub.P%05%07lIO$IdentityMessageFno%0a%a3G%80Cd%9e!M%08r%00-NK%009%ae%00.6%0d%01%1cb%a2%ef%dajq%cet%25%f3%25N%005~%07%01%1cSerializA%b25T%04xp!%c7%00Ez|%00-B%14.AutoVA%c0%00_=L%00_1LL0%b5%12S%c4%d1%faQ%02%00%07L%00%03keyt%00%12}.pString;L%00%05labelq%00~%00%15L%00%07linkUr%11%0f0%09namespacet%00%11%1d=%25%f7a%e0%10short%05%846^%00@Object;L%00%04typet%009~%0f%01%0d%d4%00/%1d%ca%0c$Typa%cd%00%05e%a4%01%a1%10%17xr%00;%9a%1d%01.I%001%13%1c%acD %db1?%19%02!%e3<pt%00%05mapFnt%00%0cMap 1%84%10ppt%00%11B%1d%02%0c~r%007%cay%00%01%c2%89F %00%00%12%00%00xr%00%0e%81%d3%00.%81%b0%10.Enum.%1d%008pt%00%0aJAVA_CLASSt%f6%ce%02%0csr%00BN%b1%00N%0e%03m%038WithAttributesC%a1%98%1c%de%88%17?%e0%93%d6U!1%08r%00&NQ%00%a9%c0%18.Custom%055%1cj%b0%08%9d%0b;%1d%0b%095%00 n5%00%01d%1cC%dd%d5%89%ae%bc~%f8%01/A%fe%00c>1%00%e8runners.dataflow.repackaged.com.google.common.collect.Immuta]%14BiMap$qo%10edFor5w%01t%08r%00a%fer%00:r%00np%00,%02[%00%04keyst%00%13[}Qm0%08[%00%06E%ed%00sA%ee%10)xpur%11'I3%0d'%1c%90%ceX%9f%10s)l%01%bf%14p%00%00%00%01s2Y%02<Long;%8b%e4%90%cc%8f#%df%02%00%01JmB%0cxr%00%10Y~4Number%86%ac%95%1d%0b%94%e0%8b%11J%01%01%04%04u%01~%00+%0dXR%88%06%09%a5%90.TupleTag%b3%18yf[%c0z%b5%02%00%02Z%00%09generatedL%00%02id%01L %15xp%00t%00%06ou%e1%db%0csr%00%1f%05%87%e1%d8%04.C)%afTions$EmptyListz%b8%17%b4<%a7%9e%de%05%96^%7f%07%0d%84B%ba%07p%a4Mf$.%cc%15%e5%02%00%0bZ%00%18allowedLateness%c1e,ifiedZ%00%0dmode%1d%10D%1atimestampCombiner%1d%1d%14%10trigg%1d%13%08L%00%0f:[%00%08t%00%18%85%e5%10joda/%01L%10/Dura%01%daT;L%00%0fclosingBehaviort%00A%05-%04ap%0e%87%09RC%09%22%c3%08%1a%9d%08%04$C6C%00%a1]%01%c3%08t%00?RK%00) %0d=%00i&%0a%09%1c$Accumul%05%9b%08Mod%a1c%18%0eonTime%19%9e%00@RS%00%f9%00F%9e%00%00O2B%00%0e%84%09!%042P%01%08t%00<%a6W%00%01%902>%00%0c;L%00%07-%86%08t%002%aaI%00)%ba%0c;L%00%08)S%10Fnt%003%a6@%00Ia%04Fn%1a%12%0a%0csr%00%16%810!%e7%00.%01%e3%00.1%e7%1c%00%00%02?zQ%ce%d6A%b6%08r%00%1f6%25%00 base.Base%1d.%10Y%19:%f4%8ee%a1%1c%07iMillise%ce%05%01%0c~r%00?%01BI!%04.b%1e%a8%0b9%83%00.%09%ce%0cing.%09%a3>!%02%05H%cdya%86`%1ft%00%11FIRE_IF_NON_EMPTY~r%00=Nh%00I>%0dZn>%02%01b%01%01%c1%df%0df,%16DISCARDING_%01q(D_PANES~r%00>Nk%00n%d3%006V%02%01h%01%01%1dl%00%0b%01a%14_ALWAY%01a%00:%a2a%00B`%02%01Y%01%01%1d]@%0dEND_OF_WINDOWsr%00~%04%089%93%18DefaultM}%1c%b1%0a%e3%87%d1%bd:sI%1b%000%a6%a5%00I%bc%1c6M3!y%faA%0f%12_%0a%0c%0bsub%0d%18%0cst%00%10%c9E%a1L%00/%a1;%08;xp!%86%105sr%006%a2g%00%14GlobalIF s%91%0c%e4%e00%f3%16 %09%ac%00;%a2E%00$NonMerging%09I$FnW%06%0bg%d3%ee%a8%ab%09J%001%a2J%00%11@0%c6%04%19y%ba%8a%96W%02%00%00xp"
+      },
+      "non_parallel_inputs" : { },
+      "user_name" : {
+        "@type" : "http://schema.org/Text",
+        "value" : "Write PubSub Events/MapElements/Map"
+      },
+      "user_fn" : {
+        "@type" : "http://schema.org/Text",
+        "value" : "org.apache.beam.sdk.transforms.MapElements$1"
+      },
+      "display_data" : [ {
+        "namespace" : "org.apache.beam.sdk.transforms.ParDo$SingleOutput",
+        "key" : "fn",
+        "type" : "JAVA_CLASS",
+        "value" : "org.apache.beam.sdk.transforms.MapElements$1",
+        "shortValue" : "",
+        "label" : "Transform Function"
+      }, {
+        "namespace" : "org.apache.beam.sdk.transforms.MapElements",
+        "key" : "mapFn",
+        "type" : "JAVA_CLASS",
+        "value" : "org.apache.beam.sdk.io.gcp.pubsub.PubsubIO$IdentityMessageFn",
+        "shortValue" : "IdentityMessageFn",
+        "label" : "Map Function"
+      } ],
+      "parallel_input" : {
+        "@type" : "OutputReference",
+        "output_name" : "3",
+        "step_name" : "s3"
+      },
+      "output_info" : [ {
+        "output_name" : {
+          "@type" : "http://schema.org/Text",
+          "value" : "4"
+        },
+        "user_name" : {
+          "@type" : "http://schema.org/Text",
+          "value" : "Write PubSub Events/MapElements/Map.out0"
+        },
+        "encoding" : {
+          "@type" : "kind:windowed_value",
+          "is_wrapper" : {
+            "@type" : "http://schema.org/Boolean",
+            "value" : true
+          },
+          "component_encodings" : [ {
+            "@type" : "org.apache.beam.sdk.coders.CustomCoder",
+            "type" : {
+              "@type" : "http://schema.org/Text",
+              "value" : "org.apache.beam.sdk.io.gcp.pubsub.PubsubMessageWithAttributesCoder"
+            },
+            "serialized_coder" : {
+              "@type" : "http://schema.org/Text",
+              "value" : "%82SNAPPY%00%00%00%00%01%00%00%00%01%00%00%00%92%bb%01%f0X%ac%ed%00%05sr%00Borg.apache.beam.sdk.io.gcp.pubsub.PubsubMessageWithAttributesCoder%de%88%17?%e0%93%d6U%02%00%00xr%00&NQ%004coders.CustomC%01%0d j%b0%08%9d%0b;%1d%0b%02%055%00 n5%00%01/0C%dd%d5%89%ae%bc~%f8%02%00%00xp"
+            }
+          }, {
+            "@type" : "kind:global_window"
+          } ]
+        }
+      } ]
+    }
+  }, {
+    "kind" : "ParallelWrite",
+    "name" : "s5",
+    "properties" : {
+      "pubsub_serialized_attributes_fn" : {
+        "@type" : "http://schema.org/Text",
+        "value" : "%82SNAPPY%00%00%00%00%01%00%00%00%01%00%00%00%bb%d0%01%c8%ac%ed%00%05sr%00Aorg.apache.beam.runners.dataflow.DataflowRu%01%19%80$IdentityMessageFn%df+D%103N%8c%f1%02%00%00xr%00->P%00%d0sdk.transforms.SimpleFunctionb%a2%ef%dajq%cet%02%00%01L%00%02fnt%005Lorg/%09%91%00/%01%91%10/sdk/%19A`/SerializableFunction;xpp"
+      },
+      "user_name" : {
+        "@type" : "http://schema.org/Text",
+        "value" : "Write PubSub Events/PubsubUnboundedSink"
+      },
+      "display_data" : [ ],
+      "format" : {
+        "@type" : "http://schema.org/Text",
+        "value" : "pubsub"
+      },
+      "parallel_input" : {
+        "@type" : "OutputReference",
+        "output_name" : "4",
+        "step_name" : "s4"
+      },
+      "encoding" : {
+        "@type" : "org.apache.beam.sdk.coders.CustomCoder",
+        "type" : {
+          "@type" : "http://schema.org/Text",
+          "value" : "org.apache.beam.sdk.util.WindowedValue$ValueOnlyWindowedValueCoder"
+        },
+        "serialized_coder" : {
+          "@type" : "http://schema.org/Text",
+          "value" : "%82SNAPPY%00%00%00%00%01%00%00%00%01%00%00%00%fc%a7%03%b8%ac%ed%00%05sr%00Borg.apache.beam.sdk.util.WindowedValue$%05%06%0cOnly2%17%00LCoder%fe%d1%ad%04%8bH6%8d%02%00%00xr%009%9aQ%00FH%00D%8d~v%cdC|%d3%f0%02%00%01L%00%0avalu%09`%1ct%00%22Lorg/%09%a6%00/%01%a6,/sdk/coders/%05%84%10;xr%00*Nz%00%09%25(.Structured%05/%1cs%bf%12%0e%d5%d46%11%09%b3%00 j9%00%05/%1cC%dd%d5%89%ae%bc~%f8%01/%10psr%00$j1%00%08Voi%09d%1c%a8~b5%1e%f3l%f7%015%08r%00&j3%00%14Atomic%05j@%c7%ec%b5%cc%85tPF%02%00%00xq%00~%00%03"
+        }
+      },
+      "pubsub_topic_runtime_override" : {
+        "@type" : "http://schema.org/Text",
+        "value" : "outputTopic"
+      }
+    }
+  } ],
+  "type" : "JOB_TYPE_STREAMING"
+}
